@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        alert("内部位置！");
+        document.write('1234');
+    </script>
+    
+    <script src="./编写位置.js"></script> -->
+    <!-- script在完成引入一个js文件后，不能在该script内再编写js代码 -->
+</head>
+
+<body>
+    <!-- 写在标签的指定属性中 -->
+    <button onclick="alert('1234')">别点我</button>
+    <button onmousemove="alert('1234')">别摸我</button>
+    <br>
+    <a href="javascript:alert(1234);">1234</a>
+    <!-- a标签采用了javascript属性后，将不会具备跳转功能，而是开始执行javascript后的js代码，如果此时javascript是空的，则此时a标签点击后什么都不会发生 -->
+    <br>
+    <a href="javascript:;">没用</a>
+</body>
+
+</html>
