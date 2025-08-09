@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其他数据类型</title>
+    <script>
+        /* 
+            布尔值（"boolean"）
+                逻辑判断；两值：true、false
+                其本质还是一个数值，true1、false0
+            
+            空值（"null"）
+                表示空对象，一个值：null
+                针对于空值，没有办法使用typeof检查出来，虽然会反馈object，但这是一个小bug
+
+            未定义（"undefined"）：   
+                当声明一个变量却没有为其赋值时，此时变量值为undefined
+                一个值：undefined
+            符号（Symbol）
+                用于创建一个唯一标识
+
+
+            7种原始值是构成JS数据中的基石；
+            原始值在JS中是不可变类型（为什么，因为改不了已经在内存中创建的原始值，修改变量只会让变量指向一块新的内存空间中新的原始值，原来的原始值一直都在），一旦创造就不可变
+        */
+        let a = false;
+        console.log(a);
+        console.log(typeof a);
+
+
+        let b = null;
+        console.log(b);
+        console.log(typeof b);
+
+        let c;//与let c = undefined 
+        console.log(c);
+
+        let d = Symbol();
+        console.log(d);
+        console.log(typeof d);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

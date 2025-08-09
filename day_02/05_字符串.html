@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串</title>
+    <script>
+        /* 
+            字符串 "String"：
+                JS中，使用单引号或双引号来表示字符串（单行字符串）
+                转义字符：类似字符实体
+                \":实现"
+                \':实现'
+                \\:实现反斜杠
+                \t：制表符
+                \n：换行
+            需注意：单双引号的字符串不允许跨行,主动报错,需要在第一行最后位置增加一个"\"来连接两行。但最终显示不会换行，只会空格隔开
+                模板字符串：
+                使用反单引号实现：``,
+                可以自动连接多行字符串不报错，相当于多行字符串,并会保留换行（不是主要）
+                字符串中允许嵌套变量,嵌套：${变量名a}（相当于a存放的地址）
+                console.log(`m = ${m}`); 
+        */
+        let a = "abcd";
+        console.log(a);
+        console.log(typeof a);
+        let b = 'efg';
+        console.log(typeof b);
+
+        let c = '单引号：\'';
+        let d = "双引号：\"";
+        let e = "反斜杠：\\";
+        let f = "中间有\t一个指标符";
+        let g = "在这里换行\n第二行"
+        console.log(c); 
+        console.log(d); 
+        console.log(e);
+        console.log(f);
+        console.log(g);
+
+
+        let h = '123\
+        456';
+        console.log(h);
+        let i = `123
+                456
+                789`;
+        console.log(i);
+        
+
+        let j = '尘百禁区';
+        let k = `你好,${j}`;
+        console.log(k);
+
+        let m = 10;
+        
+        console.log(`m = ${m}`);
+    </script>
+</head>
+<body>  
+    
+</body>
+</html>
