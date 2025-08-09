@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+        标识符：JS中，可以自主命名的内容就是标识符（变量、函数、类名）
+
+
+        命名规范：
+            标识符只能含有数字、字母、下划线、$组成，且不能以数字开头
+            不能是JS的关键字和保留字、也不建议内置函数和类名（不会报错，也可以正常显示，但会覆盖掉原有的内置函数后类名，使其失去原本作用）
+            命名规范：
+                通常使用驼峰命名法：类名首字母小写，每个单词首字母大写：maxLength、borderLeftWidth...
+                类名使用大驼峰：类名首字母大写，每个单词首字母大写：MaxLength、BorderLfetWidth...
+                常量统一大写
+
+        */
+        
+        let a = 10;
+        let a_b$ = 20;
+        let a_2b =30;
+        // let 3_c =20;会主动显示波浪线，提示报错
+        console.log(a);
+        console.log(a_b$);
+        console.log(a_2b);
+        // console.log(3_c);
+
+        // let let = 30;
+        // console.log(let)
+        //let alert = 10;
+        alert(10);//此时alert被覆盖，无法执行，会提示报错
+        console.log(alert)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

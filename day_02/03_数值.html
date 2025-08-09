@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // JS数据类型由原始值和对象组成
+        // 数值、大整数
+        /* 
+            数值：Number
+            JS中，所有整数和浮点数都是属于Number
+            当JS的数值超过一定范围时，会显示其数值的近似值(丢失精度)，还大就是科学计数法，还大就是Infinity（超出显示范围，无法显示）
+            Infinity是一个特殊值，表示无穷
+            NaN:一个特殊数值，表示一个非法数值
+            要尽量避免出现Infinity和NaN这两个数值，出现了就要判断避免就行
+        */
+       let a = 10;
+       a = 10.5;
+       a = 99999999999999991;
+       a = 0.1 + 0.2;//小数运算时，结果并不精确 
+       //a = 1 - 'a';结果显示NaN：（Not a number）
+       console.log(a);
+
+        /* 
+            大整数（BigInt）
+            用于表示较大的数值，且只能整数，不能小数
+            怎么表示：一个数字以n结尾
+            表示范围以内存为准
+        */
+       let b = 9999999999999999199999999999999991n;
+       //b = 0.1n;自动提示错误
+       console.log(b);
+       let c = 0b1010;
+       let d = 0o177;
+       let e = 0x16;
+       /* 
+        数值前缀表示进制：
+        0b表示二进制数
+        0o表示八进制数
+        0x表示十六进制数
+        但最终显示为10进制数（自动转换）
+       */
+        console.log(c)
+        console.log(d)
+        console.log(e)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
