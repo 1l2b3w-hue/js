@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类型转换-数值</title>
+    <script>
+        /* 
+            抓换方法：
+                1.调用Number()函数抓换
+                    转换情况：
+                        1.字符串：
+                            如果字符串为纯数字（合法数字），则可以成功转换为数字；
+                            如果字符串含有非数字的内容，则转换为数值时显示NaN
+                            如果字符串为空格或空字符串，则转换为数值为0
+                        2.boolean
+                            true为1，false为0
+                        3.null
+                            0
+                        4.undefined
+                            NaN
+                专门用于转换字符串转换为数值的方法
+                    1.paresInt() ：将字符串转换为整数
+                        将字符串从左到右的顺序将出现的数字逐个转换为数值类型,在碰到非数字内容后，停止转换，丢掉后面的所有字符（可以用于取整，截断小数），包括数字，如果开头就是非数字，则会转换为NaN，开头为空格或 + 、-表符号的时，
+                        正常显示数值（负号自动保留）;
+                        如果将非字符串类型的值传给paresInt时，paresInt会自动先将其转换为字符串类型，再进行转换为数值
+                    2.paresFloat() ：将字符串转换为一个浮点数
+                        转换情况与paresInt一致
+                
+        */
+        let a = "string";
+        a = null;
+        a = true;
+        a = false;
+        a = undefined;
+        a = "1a23";
+        console.log(typeof a, a);
+
+        a = Number(a);
+        console.log(typeof a,a);
+
+        let b = '-123.123';
+        console.log(typeof b , b);
+        b = parseInt(b);
+        console.log(typeof b , b);
+
+        let c = '123.324';
+        console.log(typeof c, c);
+        c = parseFloat(c);
+        console.log(typeof c , c);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

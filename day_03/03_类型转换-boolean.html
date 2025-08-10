@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类型转换-boolean</title>
+    <script>
+        /* 
+            boolean()函数
+                针对于数值（非0）、大整数、字符串来说，转换结果为true，而针对于null、undefined、0、NaN、空串等表示没有、错误的转换结果为false
+                对象通常转换为true
+        */
+        let a = 1;
+        a ='abc';
+        a = null;
+        a = undefined; 
+        a = 11n;
+        a = ' ';
+        console.log(typeof a, a);
+
+        a = Boolean(a);
+        console.log(typeof a, a);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

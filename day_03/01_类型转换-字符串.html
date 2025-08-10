@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类型转换-字符串</title>
+    <script>
+        /* 
+           类型转换：将一种数据类型转换为另一种数据类型
+           转换主要指其他类型转换为number、boolean和string（其他类型要么值少，转换为该类型无意义或者使用场景不多）
+            需要注意的是，这里转换并不是真正的将值的类型转换为另一种类型，因为原始值（基本类型字面量）是不可修改的，不可能真正实现转换，
+            转换的实质就是在内存区域开辟一个新的空间，创建数据类型为指定类型后将原有内容保持不变的放入
+
+           转换字符串：
+            1.调用toString（）方法转换为字符串
+                调用x的y方法方法：x.y();
+                针对于undefined和null两个原始值，使用toString（）方法会报错，因为其本身内容就没有什么，toString也没办法读取内容
+            2.调用String（）函数转换为字符串
+                调用x函数：x（）；需要传参
+                对于拥有toString方法的原始值使用String()函数进行类型转换时，相当于使用toString方法
+                而对于没有toString方法的null、undefined，使用String（）函数则会生成"null"和"undefined"两个字符串
+            都属于强制类型转换或显示类型转换
+        */
+        let a = 10;
+        a = true;
+        a = undefined; //因为无法读取而无法转为字符类型，
+        a = null;
+        a = 11n;
+        a = Symbol;
+        console.log(typeof a, a);
+        a = a.toString();//调用了a的toString方法，于是开辟一个一块空间，存放一个String类型的10，此时需要为此赋值给变量
+        console.log(typeof a, a);
+        a = undefined;
+        a = null;
+        a = String(a);
+        console.log(typeof a, a);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

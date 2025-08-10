@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一元加减</title>
+    <script>
+        /* 
+            一元加减
+            + ：
+                正号,不会影响数值的符号位
+            - ：
+                负号,对数值进行符号位取反
+
+            当非数值类型的数据进行正负运算时，会先转变成数值类型，在进行计算
+        */
+        let a = 10 ;
+        console.log(a);
+        a = +a;
+        console.log(a);
+        a = -a;
+        console.log(a);
+
+        let b = '123';
+        b = +b; 
+        console.log(typeof b, b);
+
+        let c ='123';
+        c = c - '';
+        console.log(typeof c,c);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
