@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>逻辑运算符</title>
+    <script>
+        /* 
+            &&
+                左右都为true时，返回true，否则返回false
+                存在短路：当与运算左侧被判假时，右侧不计算。
+                与运算，找false，有false就返回false，没有false返true
+                当非Boolean值进行与运算时，会先转换为Boolean类型进行运算，但是最终会返回原值
+                    返回原值规则：
+                        当第一个为true时，返回第二个值
+                        当第一个为false时，返回第一个值
+            ||
+                左右全为false时，返回false，否则返回true。
+                存在短路：当与运算左侧被判真时，右侧不计算。
+                或运算，找true，有true返true，没有true则返false
+                当非Boolean进行或运算时，规则与&&类似
+                    当第一个为true时，返回第一个值
+                    当第一个为false时，返回第二个值
+        */
+        let a = 1;
+        let b = 2;
+        //let result =--a && b++;
+        //let result = a-- && b++;
+        // console.log(typeof result ,result);
+        console.log(typeof a, a);
+        console.log(typeof b, b);//出现短路，当与运算左侧被判假时，右侧不计算。
+
+        //false || alert("短路?");
+        true || alert("短路?");
+        let c = 1;
+        let d = 0;
+        let result = c || d ;//返第一true
+        result = d || c; //返第二true
+        result = c || 2; //返第一true
+        result = d || NaN;//返最后一个false
+
+        console.log(result);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

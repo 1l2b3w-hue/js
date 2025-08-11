@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关系运算符</title>
+    <script>
+        /* 
+            检查两个值之间的关系是否成立，成立true，不成立false
+
+            >
+            >=
+            <
+            <=
+            =
+
+            隐似转换：
+                当存在非数值类型转换时，会先将非数值类型转换为数值类型，再进行比较
+                两个字符串进行比较时，按照Unicode编码（包含了ASCII码，因此比较字母啥的可以按照ASCII来比较）来一次比较每个字符，先大为大
+                当像比较两个字符串中数的大小时，应该将其中一个字符串转换为数值类型，摆脱两个字符串类型比较的规则
+        */
+        let a = 10; 
+        let b = 12; 
+        // a = 'abe'
+        // b = 'abc'
+        let result = a > b ;
+        result = a < b;
+        console.log(result);
+        a = 10;
+        b = 10;
+        result = a >= b;
+        result = a <= b;
+        console.log(result)
+
+        result = 5 < '10';//字符转换为数值10
+        result = 1 > true;
+        console.log(result);
+        result = '12' > '2';//按照Unicode编码比较
+        result = +'12' > '2';
+        console.log(result);
+
+        //说明num在5与10之间
+        let num = 9;
+        result = num >= 5 && num <= 10 ;
+        num = 11;
+        result = 5 < num < 10//JS中，允许这样书写表达式，会从左往右开始执行，先判断 5<num，成立为true;在判断true<10,发生类型转换，判断式子成了，返回true
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
