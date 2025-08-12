@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判断语句——if语句</title>
+    <script>
+        /* 
+            流程控制语句：用于改变语句的执行顺序（从上到下）
+                1.条件判断语句
+                2.条件分支语句
+                3.循环语句
+            if语句 ：
+                    if(条件表达式) {
+                        语句....
+                    }
+                    执行顺序：当条件表达式中为真时（即使表达式不为Boolean类型也会自动转换为Boolean类型），执行代码块中的语句，否则不执行
+                    如果没有代码块控制，则只会执行与if最近的语句，后面不会放入if执行顺序中。
+        */
+        let a = 100, b = 13;
+        if(a > b) {
+            console.log(`最大值是a：${a}`);
+        }
+        if(a < b) {
+            console.log(`最大值是b：${b}`);
+        }
+
+        if(b > 12) 
+            alert("b大");
+            alert('12小');//本意为当 b>12成立时，执行两个alert，但现在无论成不成立，第二个alert一定执行，加一个{}就行
+    
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

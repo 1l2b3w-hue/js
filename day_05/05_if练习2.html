@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if连续2</title>
+    <script>
+        let grade = + prompt('请输入成绩');
+        if ( isNaN(grade) ||  grade < 0 || grade > 100) {
+            alert(`成绩输入错误，请重新输入`);
+        }
+        else {
+            if (grade >= 60 && grade < 80) {
+                alert(`奖励一本参考书`);
+            }
+            else if (grade >= 80 && grade < 100) {
+                alert(`奖励一台iphone`);
+            }
+            else if (grade == 100) {
+                alert('奖励一台BMW');
+            }
+            else {
+                alert('没有奖励');
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

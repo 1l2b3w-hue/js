@@ -4,11 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1</title>
+    <style>
+        form {
+            margin: 100px auto;
+            box-sizing: border-box;
+            width: 500px;
+            height: 250px;
+            background-color: skyblue;
+        }
+        input {
+            display: block;
+            margin: 0 auto 5px;
+            width: 250px;
+            height: 50px;
+            border: none;
+            outline: none;
+        }
+        input:nth-child(-n+3) {
+            border-radius: 25px;
+        }
+    </style>
 </head>
 <body>
-    <form action="http://10.100.4.224:8888/home" method="get">
-        <input type="text" name="user">
-        <input type="submit" value="提交">
+    <form action="http://10.100.4.224:8888/userregist" method="post">
+        <input type="text" name="user" placeholder="请输入账号">
+        <input type="text" name="password"  placeholder="请输入密码">
+        <input type="text" name="daihao"  placeholder="请输入昵称">
+        <input type="submit" value="注册">
     </form>
 </body>
 </html>

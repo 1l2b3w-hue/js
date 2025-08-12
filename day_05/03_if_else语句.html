@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if-else语句</title>
+    <script>
+        /* 
+            if-else语句 ：
+                    if(条件表达式) {
+                        代码块1
+                    }
+                    else {
+                        代码块2
+                    }
+                执行顺序：当条件表达式中为真时，执行代码块1中的语句，为假时，执行代码块2中的语句
+                else语句会自动匹配最近的if语句（else上方的if）
+            if——else if——if语句 ：
+                    if(条件表达式1) {
+                        代码块1
+                    }
+                    else if（条件表达式2） {
+                        代码块2
+                    }
+                    ...
+                    else {
+                        代码块3
+                    }
+                else if 可以有多个
+                执行顺序：当条件表达式1中为真时，执行代码块1中的语句，为假时，判断条件表达式2中的真假，真执行代码块2，假继续往下执行判断剩余else if直达没有else if执行else语句中的代码块3
+                当成功执行了某个else if的代码块后，停止判断后续的else if语句（跳出了整个if——else if——if语句）
+        */
+        let a = 10, b = 11;
+        if(a > b) {
+            console.log(`最大数为a:${a}`);
+        }
+        else {
+            console.log(`最大数为b:${b}`);
+        }
+
+        let age = 90 ;
+        if(age < 10) {
+            console.log(`儿童`);
+        }
+        else if (age < 18) {
+            console.log(`青少年`);
+        }
+        else if (age < 30) {
+            console.log(`青年`);
+        }
+        else if (age < 50) {
+            console.log(`中年`);
+        }
+        else if (age >= 50) {
+            console.log(`老年`);
+        }
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

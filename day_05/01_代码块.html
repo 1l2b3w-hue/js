@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>代码块</title>
+    <script>
+        /* 
+            { }创建代码块，对代码进行分组，不影响执行顺序
+            同一个代码块中的代码（同一组代码），要么都执行，要么都不执行
+
+            let声明的变量（块作用域）不能跨代码块，var可以（会使其不易维护）
+        */
+        {
+            let a = 10;//类似局部变量
+            var b = 10;
+        }
+        // console.log(`a = ${a}`);
+        console.log(`b = ${b}`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

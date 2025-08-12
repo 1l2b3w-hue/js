@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if练习3</title>
+    <script>
+        let height = 181;
+        let wealth = 1001;
+        let face = 501;
+        let result = (height > 180) + ( wealth > 1000 ) + (face > 500);
+        //height > 1180 > 1500 >50 ——>false>1500>50——>false>50——>false
+        if(result == 3) {
+            alert('我一定要嫁给他');
+        }
+        else if (result < 3 && result > 0) {
+            alert('嫁吧，比上不足，比下有余');
+        }
+        else {
+            alert('不嫁');
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
