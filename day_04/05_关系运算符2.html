@@ -10,11 +10,12 @@
                 相等运算符，判断两个值是否相等，相等true，不等false
                 针对不同类型的值进行比较时，会自动转换为相同类型（通常为数值类型）然后对同类型值进行比较(当然字符串类型的话，按照Unicode编码比较)
                 null 与 undefined进行相等比较是为true
-                NaN出现在关系运算符中，都显示false(NaN与所有值都不等，包括他自身)。
+                NaN出现在关系运算符中，都显示false(NaN与所有值都不等，包括他自身)（NaN出现在关系运算中，结果只会是false）。
                 
             ===
                 全等运算符,判断两个值是否全等。
                 正对于两个不同类型的数值进行比较时（不会进行类型转换），都会返回false
+                null 与undefined进行全等比较时返回false
 
             != 
                 不等，检查两个数值是否不相等。
@@ -30,7 +31,7 @@
         b = '12'
         let result = a == b;
         result = null == undefined;
-        result = NaN == NaN;
+        // result = NaN == NaN;
         console.log(result);
 
         result = 1 === '1';
