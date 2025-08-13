@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环练习3</title>
+    <script>
+        let i = +prompt("请输入大于1的整数");
+        if(i !== 1 &&  !isNaN(i)) {
+            let n = 1 ;
+
+            for(let half = 2;half <= parseInt(i / 2); half++){
+                if(i % half == 0) {
+                    alert(`${i}不是质数`);
+                    n = 0;
+                    break;
+                }
+
+            }
+            if(n) {
+                alert(`${i}是质数`);
+            }
+        }
+        else {
+            alert('输入错误，请重新输入！');
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

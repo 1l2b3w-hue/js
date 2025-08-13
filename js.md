@@ -381,3 +381,5 @@ Boolean()函数：对于空的、错误的都为false，其余为true ，对象�
 ​	document.write ：直接在页面中显示输出信息（无，Undefined）
 
 ​	console.log ：控制台显示输出信息（String）
+
+技巧：判断浮点数：将数模1，有余数则为浮点数，没有为整数

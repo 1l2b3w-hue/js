@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环练习2</title>
+    <script>
+        // let i = 153;
+        // i = i + '';
+        // let sum = (+i[0]) ** 3 + (+i[1]) ** 3 + (+i[2]) ** 3; //索引，将字符串看成一个数组去对待。
+        // console.log(sum);
+
+        // let i = 153;
+        // let sum = parseInt(i /10 )%10 ** 3;
+        // console.log(sum);//15，为什么，**的优先级高于%，先算10 ** 3
+        // for (let i = 100; i < 1000; i++) {
+        //     // let num = i;
+        //     let sum = 0;
+        //     // while (num) {
+        //     //     sum += (num % 10) ** 3;
+        //     //     num = parseInt(num / 10);
+        //     // }
+        //     sum = parseInt(i/100 )**3 +( i % 10 )** 3 + (parseInt(i /10 )%10 )** 3;
+        //     if(sum === i ) {
+        //         console.log(i);
+        //     }
+        // }
+
+        for (let i = 100; i < 1000; i++) {
+            i = i + '';
+            let sum = (+i[0]) ** 3 + (+i[1]) ** 3 + (+i[2]) ** 3;
+            i = +i;
+            if (sum === i) {
+                console.log(i);
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
