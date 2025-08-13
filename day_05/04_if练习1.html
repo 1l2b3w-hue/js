@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>练习1</title>
     <script>
+        console.time();
         //prompt : 用于获取用输入的数据。但返回字符串类型
         let num = +prompt(`请输入一个数:`);
         // num = parseInt(num); 截断浮点数，保留整数；浮点数与1取模时，会存在余数（小数点后面的数），也可以作为判断小数
@@ -20,6 +21,8 @@
         else {
             alert(`非法输入,请输入一个整数`);
         }  
+        console.log(typeof (document.write(123)))
+        console.timeEnd();
     </script>
 </head>
 <body>
