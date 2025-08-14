@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象</title>
+    <script>
+        /* 
+            原始值只能表示一些简单的数据
+            对象是JS中的一种复合数据类型
+                可以相当于一个容器存放不同的数据类型
+                对象中存放的数据被称为属性
+                创建属性：
+                    对象名.属性名 = 属性值；
+                删除属性：
+                    delete 对象名.属性名
+                当读取一个对象中没有的属性名时，会返回undefined（不报错）
+        */
+        let people = new Object();//创建一个对象，让obj指向该对象，new可以省略
+        people.name = 'libowei';
+        people.age = 23;
+        people.height = 171;
+        people.wight = 141;
+        people.name = 'lixinping';//覆盖前面的name,可以修改属性
+        console.log(people);
+        console.log(people.name);
+        delete people.name;
+        console.log(people);
+        console.log(people.name);//显示undefiened
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>break和continue</title>
+    <script>
+        /* 
+            break和continue
+                break :
+                    用于终止switch和循环语句，在执行break后，会立即跳出switch和循环语句；只会影响到最近的循环
+                continue:
+                    用于跳过本次循环，继续执行下一次循环
+        */
+
+
+
+        for(let i = 0; i < 5;i++){
+            for(let j = 0; j < 5 ;j++){
+                if(j == 1){
+                    continue;
+                }
+                console.log(`${i}.${j}`);
+            }
+
+        }
+        // for(let i = 0;i < 10;i++) {
+        //     if(i === 5) {
+        //         //break;//跳出循环，停止执行本次循环后的代码以及后续循环
+        //         continue;//跳出本次循环，继续下一次循环
+        //     }
+        //     console.log(i);
+      
+        // }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嵌套练习2</title>
+    <script>
+        console.time();
+        for(let i = 1; i <= 100000 ; i++) {
+            let sum = parseInt(i ** .5);
+            let count = 1;
+            for(let j = 2;j <= sum; j++) {
+                if( i % j === 0) {
+                    count = 0;
+                    break;
+                }
+            }
+            if(count) {
+                document.write(`${i}<br>`);
+            }
+            
+        }
+        console.timeEnd();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的属性</title>
+    <script>
+        /* 使用typeof检查一个对象时，返回类型为object
+            对象的属性名通常在底层本身是一个字符串，因此属性名可是任意字符,如果采用了特殊字符，则使用对象名['属性名']的形式命名,单独取出时，按照命名方式来
+                但强烈建议取名按照标识符命名规则
+            使用符号类型（symbol）作为属性名，添加属性(一般情况下，不希望被别人看到和更改)
+
+            使用[]去操作属性名时，里面可以是类名，变量名，对于变量名借助[]操作属性名时，本质是按照变量中的值操作
+
+            对象中属性的值可以是任意属性类型，也可以是一个对象
+
+            in 运算符
+            "属性名" in 对象 :表示检查一个对象里面有没有这个属性,存在返回true，不存在返回false
+        */
+        let people = Object();
+        people.name = 'chenbai'
+        people.adf = 123;
+        people['A6^A7'] = 123;
+        people['```'] = '123'
+        // console.log(people);
+        // console.log(people['A6^A7']);
+        // let my = Symbol();
+        // let your = Symbol();
+        // people[my] = '1233432452';
+        // console.log(people);
+        // console.log(people[your]);
+        // people[my] = '123445';
+        // console.log(people[my]); 
+        // let str = '1234';
+        // people[str] = '123';
+        // console.log(people[str]);
+        // console.log(people);
+
+        people.f = Object();
+        console.log(people);
+        people.f.name = 'jinqv';
+        console.log(people);
+        console.log("name1" in people);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
