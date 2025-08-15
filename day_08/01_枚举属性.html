@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>枚举属性</title>
+    <script>
+        /* 
+            枚举属性 ：将对象中的所有属性全部获取
+            for-in语句
+                for(let propName(根据需要进行更改) in 对象名) {
+                    语句...
+                }
+            每次遍历时，都会将属性名赋值给propName(一个变量，存放属性名)
+            符号添加到属性无法被枚举
+        */
+        let west = {
+            name : '孙悟空',
+            gender : '男',
+            age : 1000,
+        };
+        let a = Symbol();
+        west[a] ='1234';
+        console.log(west);
+        for(let check in west) {
+            console.log(1);//无法检查除symbol类型定义的属性
+            console.log(check);
+            console.log(west[check]);
+            
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的创建方式</title>
+    <script>
+        /* 
+            函数的定义：
+                1.函数声明
+                    function  函数名(){
+                        语句
+                    }
+                2.函数表达式:将函数名变成了变量名，const并不是必须的，他是防止变量重新赋值而产生影响，所有模拟想让他该改就不用const，不想就const
+                    const 变量名 = function(){
+                    
+                    }
+                3.箭头函数
+                    const 变量名 =  () => {
+                        语句 
+                    }
+                    const 变量名 = () => 语句
+        */
+        function ab() {
+            console.log('a');
+            console.log('b');
+        }
+        ab();
+        console.log(typeof ab);
+
+
+        const cd = function(){
+            console.log('c');
+            console.log('d');
+        }
+        cd();
+        console.log(typeof cd);
+
+
+        const ef = () => {
+                console.log('e');
+                console.log('f');
+        }
+        ef();
+        console.log(typeof ef);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

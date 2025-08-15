@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+    <script>
+        /* 
+            函数 ：
+                也是一个对象，拥有其他对象的所有功能
+                可以存放代码，需要时可以进行调用
+
+            创建 ：
+                function 函数名() {
+                    代码    
+                }
+            调用函数：执行函数中的代码
+                函数名（）
+            使用typeof检查函数名返回function
+        */
+        function printer() {
+            console.log('first function');
+            console.log('123');
+            console.log('321');
+        }
+        // console.log(printer);
+        printer();
+        console.log(typeof printer);
+        console.log(typeof printer() );
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

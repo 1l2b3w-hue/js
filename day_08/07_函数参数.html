@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数参数</title>
+    <script>
+        /* 
+            形式参数：
+                在定义函数时，可以为函数增加多个形式参数（形参）
+                在函数中定义形参，相当于在函数中声明了一个变量但没有对其进行赋值.
+            实际参数：
+                在调用函数时，可以在函数括号中增加多个实际参数（实惨）
+                实参会赋值给对应位置的形参
+            参数数量：
+                形参实参数量一致 ：一一对应；
+                形参数量大于实参数量 ：实参一一对应，多余形参不赋值
+                形参数量小于实参数量 ：多余实叁则不实用
+            
+            参数类型
+                JS中，不会检查参数的类型，可以为参数赋任意类型，因此在为一个函数传参时，要更加注意类型错乱导致的bug,一般要为其强制转换类型避免错误
+
+        */
+        // function add(a) {
+        //     console.log('a=',a);
+        //     console.log('b=',b);
+        // }
+        // add();
+        // add(1,2);//1赋值给a 2赋值给b
+
+        // let a = +prompt('请输入一个整数');
+        // let b = +prompt('请输入一个整数');
+        // function add(a,b) {
+        //     console.log(`${a} + ${b} = ${a + b}`);
+        // }
+        // add(a,b);
+
+
+        function add(a) {
+            console.log('a=',a);
+        }
+        add();
+        add(1,2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

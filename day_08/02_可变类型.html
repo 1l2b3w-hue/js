@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可变类型</title>
+    <script>
+        /*  
+            对象内存结构：
+                let people = Object(); 每调用一次Object，直接在内存中创造出一个对象     
+                这段代码先是在内存中开辟出一块空间存放变量和变量值（栈内存），而变量值则存放引用(一块内存地址)（指向存放在堆空间的对象），对象分为属性与属性值（都存放在堆内存中），存放原理与变量一致，
+                属性值也是存放的内容也是指向一块内存空间，该内存空间存放属性值（会提前检查一遍内存，存在则将地址值放入属性值中，没有就开辟一块空间，再把这块空间地址放入属性值），
+                而对象的可变指的就是属性与属性值那一块区域，可以发生变化：增加属性、删除属性、更改属性值...等操作，并不是指可以修改属性值指向的内存空间的数据
+            如果当两个变量同时指向同一个对象时，修改一个变量中的对象属性值时，对另一个变量也产生影响
+            将两个对象进行相等和全等比较时，比较的是两个对象的地址
+        */
+        let a =10 ;
+        console.log(a);
+        let people = Object();
+        people.age = 10;
+        
+        let p2 = Object();
+        let p3 = Object();
+        console.log(p2 === p3)
+        let b = p2;
+        let c = p2;
+        console.log(b == c);
+        b.name = 'abc';
+        console.log(b);
+        console.log(c);
+        // 空值合并运算符 ：当左边操作数为null、undefined时，返回右值；否则返回左值（与逻辑或相似，只不过针对与null、undefined）
+        // let a = false ?? 123;
+        // console.log(a); 
+
+        // 可选链运算符：用于当访问当对象的属性或函数为null、undefined时，防止浏览器报错，并将表达式的结果改为undefined
+        // let obj = {
+        //     names : '孙悟空',
+        //     // fabao : {
+        //     //     jinggubang : '一万可九千斤重'
+        //     // }
+        //     // adfaf(){
+
+        //     // }
+        // }
+        // console.log(obj.fabao?.jinggubang);
+        // console.log(obj);
+        // console.log(obj.fabao);
+        // console.log(obj.adfaf?.());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>改变量和改对象</title>
+    <script>
+        /* 
+            修改对象 ：
+                当修改某个对象的内容时，所有指向该对象的变量都会受到影响。
+            修改变量：
+                当修改某个变量值时，不会影响其他变量，只会影响自身
+
+            因此，在使用变量声明对象时，常常会因为某些原因导致变量指向内容发生改变，提高代码复杂度（不知道变量谁指谁了）
+            常用const去修饰存储对象的变量
+        */
+        const  obj = Object();
+        obj.name = '孙悟空';
+        const obj2 = obj;//禁止对obj、obj2进行再赋值，从而使其指向别的东西 。不影响对象的属性操作
+        // obj = null;
+        obj2.name = '猪八戒';
+        // obj2 = {};
+
+        console.log(obj);
+        console.log(obj2);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
