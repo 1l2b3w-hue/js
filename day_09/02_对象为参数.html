@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象作为参数</title>
+    <script>
+        /* 
+
+        */
+        // const fun = function(a = 10){
+        //     // console.log(a);
+        //     console.log(a.name);
+        //     a = {};//指向一个新对象
+        //     a.name = '猪八戒';//a与变量ab同时指向同一个对象，a对对象进行修改时，会引发ab指向的内容发生变更
+        //     console.log(a);
+        // }
+        // fun();
+        // const ab = Object();
+        // ab.name = '孙悟空';
+        // ab.gender = '男';
+        // ab.address = '花果山';
+        // //传递实参时，传递的并不是变量本身，而是变量存放的值（地址或引用）
+        // console.log(ab);
+        // fun(ab);
+        // console.log(ab);
+
+
+        // let obj = {name :'沙悟净'};//如果此时写一个对象，然后让形参默认值指向这个对象时，无论调用几次，都是指向obj指向的对象
+        // //函数每次调用时，都会重新创建默认值
+        function fn(a = {name :'沙悟净'}) { //一出这个函数，a就没了
+            console.log(a);
+            a.name = '唐僧';
+            console.log(a);
+        }
+        // 下面两个函数调用时，看起来默认值都是同一个对象，其实不然，是依次创建了两个对象，只不过内容相同罢了，并且每当函数执行完后，a就会消亡；就跟转世一样，只不过看起来像，但已经不是同一个人了
+        fn();
+        fn();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
