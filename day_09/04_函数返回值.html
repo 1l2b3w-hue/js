@@ -9,7 +9,7 @@
             在函数中，通过使用return来指定函数值的返回值
                 返回值就是函数执行的结果，在函数执行完后便会将返回值作为结果返回
                 任何值（对象、原始值）都可以成为返回值使用
-                如果return后不跟任何值，则返回undefined，不写return，则函数返回值还是undefined
+                如果return后不跟任何值，则返回undefined(如果没有return也返回undefined)，不写return，则函数返回值还是undefined
                 return一旦执行，则函数立即结束
         */
 
@@ -31,7 +31,7 @@
         // console.log(typeof a ,a);
 
         function fn() {
-            return ;
+            // return 1;
         }
         let a = fn();
         console.log(typeof a,a);
