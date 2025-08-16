@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数返回值</title>
+    <script>
+        /* 
+            箭头的函数的返回值可以直接写在箭头后面（前提是只有一条返回语句）
+                在箭头后面直接写对象字面量作为返回值时，其表现形式与箭头函数只有一条语句形式类似，因此，JS会认为这是一条语句，并不认为是return，此时接受该函数返回值一定为undefined，
+            此时再将整个对象用括号包裹让JS认出这不是语句（看成表达式）就行
+        */
+        // let add = (a,b) => a + b;
+        // let result =add(10,30);
+        // console.log(result);
+        let fn = () => ({naem : '孙悟空'});//看成语句了,加个括号，让其认为为表达式
+        let result = fn();
+        console.log(typeof result, result);//结果为undefined；
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

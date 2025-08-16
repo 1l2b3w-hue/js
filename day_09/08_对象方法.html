@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象——方法</title>
+    <script>
+        /* 
+            方法 ：
+                当一个对象的属性指向一个函数时，称这个函数就该对象的方法，调用该函数就是调用该对象的方法
+        */
+        let obj = Object();
+        obj.name = '悟空';
+        obj.age = '18';
+        obj.hello = function() {
+            alert('hello');
+        };
+        console.log(obj);
+        obj.hello();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

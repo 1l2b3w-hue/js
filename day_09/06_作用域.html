@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作用域</title>
+    <script>
+        /* 
+            作用域 ：一个变量起作用的区域
+
+            生命周期 ： 从创建变量开始，到销毁之间
+            全局作用域 ：
+                网页创造时创建，关闭网页时销毁
+                所有直接写入script标签都位于全局作用域中
+                全局作用域的变量都属于全局变量，可以在任意位置进行访问
+
+            局部作用域
+                块作用域 ：
+                    代码块被创建时开始，代码块执行完毕时销毁
+                    所有直接写入代码块的都位于块作用域中，块作用域的变量都属于局部变量，只能在所属块中被访问
+                函数作用域  :
+                    函数调用时产生，执行完毕销毁
+                    所有写入函数的都位于函数作用域中，位于函数作用域的变量都属于局部变量，只能在所属函数中被访问
+                    每一次调用函数时，会产生新的作用域，互不影响
+
+         */
+        // let a = '全局';
+        // console.log(a)
+        // {
+        //     console.log(a)
+        //     let b = '局部';
+        //     console.log(b);
+        // }
+        // console.log(b);超出所属代码块后，就销毁
+
+
+        function fn() {
+            let a = 10;
+            console.log(a);
+        }
+        fn();
+        // console.log(a);超出函数区域后，变量销毁
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window对象</title>
+    <script>
+        /* 
+            window :
+                window是一个对象，由浏览器提供，可以直接访问
+                window对象的属性可以通过window.来访问，也可以直接访问。所有函数可以看成window的方法
+                window对象代表浏览器的窗口，通过该对象可以实现对浏览器窗口的各种操作
+                    还负责存储JS的内置对象和浏览器的宿主对象
+
+
+                var一个变量本质上就是在window上创建一个属性
+                使用function创建的函数，相当于在window中创建了一个方法。
+                遍历发现并没有创建一个属性名为c的属性，因此，let一个变量并不会在window创建一个新属性，但let生成的变量一定存在，存在于一个秘密的地方
+                当let和var声明的变量名相同时，不会报错，但会优先访问let声明的变量
+
+        */
+        // window.alert(123);//window.alert()与alert一样的操作，都是访问了window对象的属性
+        // window.console.log('哈哈');
+        // for(let check in window) {
+        //     console.log(check);
+        // }
+
+
+        // window.a = 'a';//相当于在window对象中创建了一个属性。
+        // console.log(a);
+        // var b = 'b';//通过遍历window对象中的属性发现，var一个变量本质上就是在window上创建一个属性
+        // let c = 'c';//遍历发现并没有创建一个属性名为c的属性，因此，let一个变量并不会在window创建一个新属性，但let生成的变量一定存在，存在于一个秘密的地方
+        
+        // function fn() {
+        //     // var b = 0;//var声明的变量虽然没有块作用域，但存在函数作用域，当在函数使用var声明一个变量时，超出函数后就消亡。
+        //     d = 10;
+        // }
+        {
+            d = 10; //当在一个局部变量中，没有使用let、var、const声明一个变量时并赋值时，会直接在window对象中创建一个相同属性名和值的属性，等同于window.d=10（var d =10）
+        }
+        console.log(d);
+        
+        // function fn() {
+        //     console.log(1);
+        // } //使用function创建的函数，相当于在window中创建了一个方法。
+        
+        // console.log(window.fn);//成功检查出window中创建的fn方法
+        for(let check in window) {
+            console.log(check);
+        }
+
+
+
+
+
+
+
+
+
+
+
+        // alert(123);
+        // confirm(123);
+        // console.log(confirm(123));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
