@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>立即执行函数</title>
+    <script>
+        /* 
+            应该尽量减少直接在全局作用域中来编写代码，避免后续开发中变量名冲突覆盖等问题
+            代码尽量写在局部作用域中
+            对于let声明的变量，可以使用{}来创建块作用域
+            对于var声明的变量，可以使用IIFE来创建作用域
+        */
+        {
+            let a = 10;
+            // var a = 10;
+        }
+        {
+            let a = 20;
+            // var a = 20;//因为没有块作用域，会覆盖前面的var a；
+        }
+        function fn () {
+            var a = 10;
+        }
+        function fn2() {
+            var a = 20;
+        }
+        // 立即执行函数表达式（匿名函数IIFE） ： 只会调用一次
+        // 匿名匿名，说到底就是没有函数名，但是因为函数会提升，没有函数名就会报错，所以加一个括号括起来成为一个表达式
+        //怎么调用？括号里面的function可以看成一个函数名，后面加一个括号不就是调用了，加括号里还是外都行
+        //啥用？创建一个新的作用域(一次性的函数作用域)来比避免全局变量命名冲突而发生覆盖，在IIFE中，即使使用了var来声明变量，但出了IIFE还是消亡
+        (function(){ 
+            var a = 10;
+            console.log(123);
+        }() );
+        (function(){ 
+            var a = 10;
+            console.log(123);
+        }() )
+        // 当两个立即执行函数表达式写在一起时(没有加分号)，JS解释器会发生误判（分号的位置，并将换行忽略）将这两个IIFE看成一个连续的两个（）括起来的(函数调用)，会认为前面的（）是函数，但前面的（）和后面的括号都是函数调用，就会
+        // 提示报错，显示...不是函数
+        console.log(a); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

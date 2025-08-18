@@ -17,19 +17,19 @@
         // console.log(typeof ab);
 
         //箭头函数在只有一个参数时，可以省略（），直接写参数
-        // const bc = a => {
-        //     console.log('a=',a);
-        // }
-        // bc(123);
-        // console.log(typeof bc);
+        const bc = a => {
+            console.log('a=',a);
+        }
+        bc(123);
+        console.log(typeof bc);
 
         //可以为函数形参设置默认值
-        const num = function (a = 10 ,b = 20) {
-            console.log('a = ',a);
-            console.log('b = ',b);
-        }
-        //num(1,2)传实参时会覆盖默认值
-        num();
+        // const num = function (a = 10 ,b = 20) {
+        //     console.log('a = ',a);
+        //     console.log('b = ',b);
+        // }
+        // //num(1,2)传实参时会覆盖默认值
+        // num();
     </script>
 </head>
 <body>

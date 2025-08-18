@@ -15,7 +15,7 @@
 
                 var一个变量本质上就是在window上创建一个属性
                 使用function创建的函数，相当于在window中创建了一个方法。
-                遍历发现并没有创建一个属性名为c的属性，因此，let一个变量并不会在window创建一个新属性，但let生成的变量一定存在，存在于一个秘密的地方
+                let一个变量并不会在window创建一个新属性，但let生成的变量一定存在，存在于一个秘密的地方
                 当let和var声明的变量名相同时，不会报错，但会优先访问let声明的变量
 
         */
@@ -39,15 +39,15 @@
             d = 10; //当在一个局部变量中，没有使用let、var、const声明一个变量时并赋值时，会直接在window对象中创建一个相同属性名和值的属性，等同于window.d=10（var d =10）
         }
         console.log(d);
-        
+        console.log("d" in window)
         // function fn() {
         //     console.log(1);
         // } //使用function创建的函数，相当于在window中创建了一个方法。
         
         // console.log(window.fn);//成功检查出window中创建的fn方法
-        for(let check in window) {
-            console.log(check);
-        }
+        // for(let check in window) {
+        //     console.log(check);
+        // }
 
 
 
