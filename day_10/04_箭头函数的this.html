@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数的this</title>
+    <script>
+        /* 
+            对象中，当一个属性的名与值相同时，只写一个名就行
+
+            箭头函数中没有自己的this，他的this由外层的作用域决定
+                箭头函数的this与他的调用方式无关
+        */
+        function fn() {
+            console.log(this);
+        };
+        let a = () => {
+            console.log(this);
+        };
+        fn();
+        a();
+
+        // let obj1 = {
+        //     name : '孙悟空',
+        //     print : function () {
+        //         console.log(this);
+        //         let n = () => {
+        //             console.log(this);//由外层作用域决定this
+        //         }
+        //         n();
+
+        //     },
+        // }
+        // obj1.print();
+
+
+
+        let obj2 = {
+            name : '猪八戒',
+            print : //fn,
+             () => {
+                console.log(this);
+            },
+            // obj3 : {
+            //     name : '沙悟净',
+            //     print : () => {
+            //         console.log(this);
+            //     },
+            // }
+            obj3 : function a(){
+              
+                let b =() => {
+                    console.log(this);
+                };
+                b();
+            }
+        }
+        obj2.print();
+        // obj2.obj3.print();//由外层作用域决定this
+        obj2.obj3();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

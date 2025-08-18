@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>严格模式</title>
+    <script>
+        /* 
+            JS执行代码过程中，分两个模式
+                正常模式
+                    默认情况下，代码都运行在正常模式下
+                    语法检查并不严格，原则就是能不报错就不报错
+
+
+                严格模式
+                    使用：要想开启严格模式下的代码开头使用引入一个字符串：use strict
+                    禁止某些语法
+                    更加容易报错
+            开发尽量使用严格模式，消除隐藏问题
+        */
+        "use strict"
+        var a = 10;
+        var a = 20;
+        console.log(a);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

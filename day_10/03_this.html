@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+    <script>
+        /* 
+            this :
+                在函数中有一个隐含的参数:this
+                this会指向一个对象，this的值会根据调用的方式不同而发生变化，整体上指向调用方法的对象
+        */
+        function fn() {
+            console.log(this);
+            console.log(this ===window);
+        }
+        fn();//以函数形式进行调用，指向window（创建一个函数就是在window中创建一个方法）
+
+        // let obj = {
+        //     name : '孙悟空',
+        //     age : 18,
+        // }
+        // obj.fn = fn; 
+        // console.log(obj);
+        // obj.fn();//以对象方法的形式调用
+
+        function name() {
+            console.log(this.name);
+        }
+        let obj1 = {
+            name :'八戒',
+
+        }
+        let obj2 = {
+            name : '悟净',
+        }
+        obj1.print = name;
+        obj2.print = name;
+        obj1.print();
+        obj2.print();//会根据对象内的name存储的字符串变化而变化，也就是说：this.name就等于两个对象的name属性
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

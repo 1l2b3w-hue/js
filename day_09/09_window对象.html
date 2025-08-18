@@ -35,9 +35,9 @@
         //     // var b = 0;//var声明的变量虽然没有块作用域，但存在函数作用域，当在函数使用var声明一个变量时，超出函数后就消亡。
         //     d = 10;
         // }
-        {
-            d = 10; //当在一个局部变量中，没有使用let、var、const声明一个变量时并赋值时，会直接在window对象中创建一个相同属性名和值的属性，等同于window.d=10（var d =10）
-        }
+        
+            d = 10; //没有使用let、var、const声明一个变量时并赋值时，会直接在window对象中创建一个相同属性名和值的属性，等同于window.d=10（var d =10）
+        
         console.log(d);
         console.log("d" in window)
         // function fn() {
