@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封装</title>
+    <script>
+        /* 
+            面向对象的特点：
+                封装、多态、继承
+            
+            封装 ：
+                对象负责数据安全、存储属性
+                但是直接添加到对象中的属性并不安全，可以任意的被修改
+                任何确保数据安全：
+                    私有化数据
+                        将需要保护的数据设置为私有，只能在类内部进行使用
+                    通过设置getter和setter方法来开放对数据的操作
+                        可以控制属性的读写方式
+                        可以在方法中进行验证
+           
+                封装是主要保证数据的安全性
+                    实现封装的方式
+                        先将数据私有化，加#号
+                        通过getter（返回）、setter（获取参数修改数据）方法操作属性
+        */
+        class People  {
+            // #address = '花果山';
+            //对于实例属性，在属性名前增加‘#’，就能实现私有属性,私有属性只能在类的内部进行访问
+            // 通过构造函数设置私有属性时，必须先声明，不能在构造函数内进行声明为私有函数,再通过构造函数对私有属性进行赋值
+            // 问题来了，数据太安全了，没办法再外面访问
+            #name;
+            #age;
+            #gender;
+            constructor(name, age, gender) {
+                this.#name = name;
+                this.#age = age;
+                this.#gender = gender;
+            }
+            // sayHello() {
+            //     console.log(`大家好，我是${this.name},住在`, this.#address);
+            // }
+
+
+            // 比较老的形式
+            // getName() {
+            //     return this.#name;
+            // }
+            // setName(name) {
+            //     this.#name = name
+            // }
+
+            // 一个简单的方式
+            get age() {
+                console.log("获取性别了");
+                return this.#age;
+            }
+            set age(age) {
+                console.log("开始修改性别");
+                this.#age = age 
+            }
+        }
+        const p1 = new People('孙悟空',18,'男');
+        console.log(p1);
+
+        // p1.sayHello();
+        // p1.getName();//获取私有数据
+        // p1.setName('猪八戒');//修改私有数据
+        // console.log(p1);   
+        p1.age = 10;//背地里还是调用了set  age（）方法
+        console.log(p1.age);//表面上不用写括号，不用掉方法，但背地里还是调用了get age（）方法
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

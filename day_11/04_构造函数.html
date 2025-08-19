@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数</title>
+    <script>
+        /* 
+            类中有一个特殊的方法：constructor（）（构造函数、构造方法）
+            会在使用类创建一个对象时执行这个方法(可以将new 类命（）（传递的参数也将会被构造函数接受）看成调用该类的constructor（）函数，)
+            可以通过构造函数接受到的实参，通过this来设置实例的属性
+        */
+        // class people {
+        //     name = '孙悟空';//当把一个类的属性的值已经赋值好了，说明后面通过这个类创建的对象一开始的属性值都会一样
+        //     age = 18;
+        //     gender = '男';
+        //     sayHello = function() {
+        //         console.log(this.name);
+        //     }
+        // }
+        // const p1 = new people();
+        // const p2 = new people();
+        // const p3 = new people();
+        // console.log(p1 === p2);//说明是开辟出的对象并不是同一个
+
+        // console.log(p1);
+        // p1.sayHello();
+
+
+        class People {
+            name;
+            age;
+            gender;
+
+            constructor(a,b,c) {
+                // console.log('开始执行构造函数',a ,b ,c);
+                this.name = a;
+                this.age = b;
+                this.gender = c;
+            }
+        }
+        const p1 =new People('孙悟空',18,'男');
+        const p2 =new People('猪八戒',28,'男');
+        const p3 =new People('沙悟净',38,'男');
+        console.log(p1);
+        console.log(p2);
+        console.log(p3);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
