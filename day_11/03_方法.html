@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>方法</title>
+    <script>
+        /* 
+             类也是一个对象（万物皆对象）
+        */
+        class People {
+            name = '孙悟空'
+
+            //实例方法
+            // sayHello = function(){
+            //     alert(123);
+            // }//在实例中可以显示
+            sayHello() {
+                console.log('大家好，我是' + this.name);//可以使用this，this指向当前调用的对象
+            }//并不会在实例中显示，但调用还会存在
+
+
+            //静态方法，跟静态属性一样
+            static test() {
+                console.log('静态方法测试',this);//会显示People类 
+            }
+        }
+        People.test();
+
+
+        const p1 = new People();
+        console.log(p1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

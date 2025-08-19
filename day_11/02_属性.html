@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性</title>
+    <script>
+        /* 
+            类中再带严格模式
+            类的代码块是为了添加对象的属性的，不能乱写
+        */
+        class People {
+            // 'use strict'
+            //实例属性，只能通过实例进行访问
+            name = '孙悟空';
+            age = 18;
+
+            static hh = '使用static声明的属性是静态属性,类属性';
+            static cc = '只能通过类来进行访问';
+
+        }
+        console.log(People.hh);
+
+
+        const p1 = new People();
+        const p2 = new People();
+        console.log(p1);
+        console.log(p2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

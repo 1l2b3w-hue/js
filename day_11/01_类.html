@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类</title>
+    <script>
+        /* 
+            使用Object创建对象时：
+                1.无法区分不同类型的对象
+                2.无法批量创建对象
+            
+            类：（class）
+                类是对象的模板，在类中可以直接定义对象的属性和方法，可以通过类来直接创建相同类型的对象
+                语法 ：
+                    class 类名（大驼峰写法） {
+                        属性和方法
+                    }   
+                    const 类名 = class {
+                        属性和方法
+                    }
+                
+                类创建对象 ：
+                    new 类名(); 这里类名加（）将看成一个函数调用，而前面的new则会看成构造函数
+                    通过同一个类创建的对象，属于同类对象,
+                    可以使用instanceof来检查一个对象是不是由某个类创建的（对象名 instanceof 类名）
+                    如果某个对象是由某个类创建的，则我们称这个对象是这个类的实例
+        */
+        class People {
+
+        };
+        // console.log(typeof People);
+        
+        const Dog = class {
+
+        }
+        // console.log(typeof Dog);
+        const p1 = new People();
+        const d1 = new Dog();
+        console.log(p1);
+        console.log(d1);
+        console.log(p1 instanceof Dog);
+
+
+        // let people ={
+        //     name : '王老五',
+        //     age : 23,
+        //     height : 170,
+        //     weight : 110,
+        //     sleep : function s(){
+        //         console.log(this.name,'睡觉了');
+        //     },
+        //     eat : function e() {
+        //         console.log(this.name,'吃饭了');
+        //     },
+        // }
+
+        // const yellow = {
+        //     name : '旺财',
+        //     age : 3,
+        //     sleep(){
+        //         console.log(`${this.name}睡觉了`);
+        //     },
+        // }
+        // yellow.sleep();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
