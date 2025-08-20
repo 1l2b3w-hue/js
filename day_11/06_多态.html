@@ -6,12 +6,43 @@
     <title>多态</title>
     <script>
         /* 
-
+            多态：灵活性
+                JS中，不会去检查函数传参时的参数类型，只要参数满足某一特点，就可以去调用函数
+            JS中，多态提供了代码灵活性，
+            如果没有多态，则每次调用函数时，要对传递的参数类型进行判断
          */
         class Person {
-
+            constructor(name) {
+                this.name = name;
+            }
         }
-        
+        class Dog {
+            constructor(name) {
+                this.name = name;
+
+            }
+        }
+        const p1 = new Person("王五");
+        const d1 = new Dog("旺财");
+        // console.log(p1);
+        // console.log(d1);
+
+        class Cat {
+            constructor(foot) {
+                this.foot = foot;
+            }
+        }
+        const cat = new Cat(4);
+
+        // 定义一个函数，接受一个对象为参数，打印hello并加上对象的name属性
+
+        // 调用函数时，只需要对象满足一些条件（这里是有name这个属性即可）
+        function sayHello(a) {  
+            console.log(`hello,${a.name}!`);
+        }
+        sayHello(p1);
+        sayHello(d1);
+        sayHello(cat);
     </script>
 </head>
 <body>

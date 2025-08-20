@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>继承</title>
+    <script>
+        /* 
+            继承：扩展性
+                可以使用extends来完成继承
+                当一个类（a）继承于一个类（b）时，a将会拥有b的相同结构（属性和方法）（b是父类，a是子类）
+                通过继承可以减少重复的代码，可以在不修改一个类的前提下对其进行扩展
+        */
+        class Animal {
+            constructor(name,age) {
+                this.name = name;
+                this.age = age;
+            }
+            sayHello() {
+                console.log("动物的叫声 ");
+            }
+        }
+        class Dog extends Animal { 
+            // constructor(name,age) {
+            //     this.name = name;
+            //     this.age = age;
+            // }
+            // sayHello() {
+            //     console.log("汪汪");
+            // }
+        }
+        class Cat extends Animal {
+            // constructor(name,age) {
+            //     this.name = name;
+            //     this.age = age;
+            // }
+            // sayHello() {
+            //     console.log("喵喵");
+            // }
+        }
+        //Dog和Cat两个类继承于Animal类，拥有Animal类的结构（相当于将代码复制粘贴进去）
+        const d1 = new Dog("旺财",3);
+        const c1 = new Cat("花花",3);
+        console.log(d1);
+        d1.sayHello();
+        console.log(c1);
+        c1.sayHello();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

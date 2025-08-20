@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>继承</title>
+    <script>
+        /* 
+            继承 ：
+                通过继承可以在不修改代码的情况下对一个类进行扩展
+                在子类中，可以通过创建父类同名方法进行重写父类方法，如果想要引用父类的方法 ：在方法中可以使用super来引用父类中的方法
+                重写构造函数时，必须再构造函数的第一行写上super（）（可以不在第一行，但必须在调用this的前面）来表示调用父类的构造函数，如果想要实现使用父类的属性，在super中加参数就可以实现使用父类属性
+            OCP开闭原则 ：
+                程序应该对修改关闭，对扩展开放（运行扩展，禁止修改）
+        */
+        class Animal {
+            constructor(name,age) {
+                this.name = name;
+                this.age = age;
+            }
+            sayHello() {
+                console.log("动物的叫声 ");
+            }
+        }
+        class Dog extends Animal { 
+            // 在子类中，可以通过创建父类同名方法进行重写父类方法
+            sayHello() {
+                console.log("汪汪汪");  
+            }
+        }
+        class Cat extends Animal {
+            // 重写构造函数时，必须再构造函数的第一行写上super（）来表示调用父类的构造函数
+            constructor(name,age,address) {
+                //如果想要实现使用父类的属性，在super中加参数
+                super(name,age);//必须要写在this前面,
+                this.address =address;
+            }
+            sayHello() {
+                //引用父类的方法 ：在方法中可以使用super来引用父类中的方法
+                super.sayHello();
+                console.log("喵喵喵");  
+            }
+        }
+        const d1 = new Dog("旺财",3);
+        const c1 = new Cat("花花",3,'123');
+        console.log(d1);
+        d1.sayHello();
+        console.log(c1);
+        c1.sayHello();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
