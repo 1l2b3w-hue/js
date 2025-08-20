@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型的作用</title>
+    <script>
+        /* 
+            所有的同类型对象，他们的原型都是同一个，意味着同类型对象的原型链也会相同
+
+            
+            原型的作用：
+                原型就是一块公共区域，可以被所有类创建的实例所访问；
+                可以将一个类的实例中的所有公共属性（方法）写入原型对象中，此时只需要在类中创建一个对象就可以完成所有实例的需求
+            
+            JS中，继承就是通过原型实现的，因此，继承又称为原型继承
+            当继承时，子类的原型就是父类的一个实例
+
+            JS中，一个类的原型与由其创建的实例的原型是同一个原型对象
+        */
+        // class Person {
+        //     name = '孙悟空';
+        //     age = 18;
+        //     // sayHello = function() {
+        //     //     console.log('我是自己人，优先派遣');
+        //     // }
+        //     sayHello() {
+        //         console.log(`大家好，我是${this.name}!`);
+        //     }
+          
+        // }
+        // class Dog {
+
+        // }
+        // const p1 = new Person();
+        // const p2 = new Person();
+        // console.log(p1.__proto__.__proto__ === p2.__proto__.__proto__)
+        // const d = new Dog();
+        // console.log(p1.__proto__ === d.__proto__)
+
+
+
+
+        // class Animal {
+        //     name = '动物';
+        //     age = 3;
+        // }
+        // class Dog extends Animal {
+
+        // }
+        // class Cat extends Animal {
+
+        // }
+        // const a = new Animal();//a ——> Object ——>Object原型 ——>null 
+        // const d = new Dog();//d ——> animal ——> Object ——>Object原型 ——>null
+        // const c = new Cat();//a ——> animal ——> Object ——>Object原型 ——>null
+        // console.log(d.__proto__ === c.__proto__);//子类的原型就是父类的一个实例，那么就是两个不同的实例，自然不等
+        // console.log(a.__proto__.__proto__)
+        // console.log(a.__proto__ === c.__proto__.__proto__ );//true
+        // console.log(d.__proto__.__proto__ === c.__proto__.__proto__);
+
+        const obj = {
+            fn : function() {
+                console.log('123');
+            }
+        }
+        obj.fn();
+        console.log(obj.fn.__proto__);//fn  ——>  obj  ——> obj原型 ——> null
+        console.log(obj.__proto__)//obj  ——> obj原型  ——> null
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

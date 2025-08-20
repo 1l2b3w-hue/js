@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改原型</title>
+    <script>
+        /* 
+            大部分情况下，我们不需要修改原型对象，只有极小概率下才修改
+
+                不能通过类的实例（__proto__）去修改原型（危险）（通过实例（后代）来修改原型）：
+                    修改一个实例去影响所有实例，不合适
+                    必须创建实例去修改
+
+
+            可以通过类的prototype属性进行访问实例原型(从根上改变原型)
+                修改原型，最好通过类的prototype修改
+                    改变就是全改（相当于增加类的方法、改变类的原型指向...），无需创建实例
+
+        修改原则：
+            尽量不要更改原型
+            不要使用类的实例进行修改
+            使用类的prototype进行修改
+            最好不要为类的prototype进行赋值（完全改变原型链，非常不理智）
+        */
+        class Person  {
+            name = '孙悟空';
+            age = 18;
+            sayHello() {
+                console.log("hello");
+
+            }
+        }
+        class Dog {
+
+        }
+        const p = new Person();
+        const p2 = new Person();
+
+        Person.prototype.fly = function() {//修改实例的原型
+            console.log("起飞");
+        }
+ 
+
+        // console.log(Person.prototype === p.__proto__);
+        // console.log(p.__proto__);
+
+
+        // p.__proto__ = new Dog();//改变了指向，之前的所有存在person原型的方法失效
+        // console.log(p);
+        // console.log(p2);
+       
+        // p.sayHello();//此时p的原型链将会指向Dog，而sayHello又在person的原型对象中，出现找不到sayHello函数
+        // p2.sayHello();
+
+        // 改原型（本质还是对象），所有同类型的实例都可以调用该方法
+        // p.__proto__.run =function () {
+        //     console.log("跑步去！");
+        // }
+        // p.run()
+        // p2.run()
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

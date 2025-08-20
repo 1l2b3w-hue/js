@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型对象</title>
+    <script>
+        /* 
+            访问原型对象：
+                对象名.__proto__ 可以使用，但是不能为其赋值！！！！
+                    (一般情况下，以下划线开头的属性都是不希望被访问到的隐藏属性，这里带了两个下划线，就更加不想你知道了，非常底层的东西，他不想你访问和修改)
+                Object.getprototypeOf(对象名) 相对安全，只读取
+            
+            原型对象的数据 ：
+                1.实例中的数据（属性、对象）
+                2.constructor（构造函数）
+
+            原型对象也存在两个区域存放数据
+                1.自身区域
+                2.原型对象区域（原型的原型）
+
+            原型对象也有原型，从而构造成一条原型链，根据其对象的复杂程度的不同，其原型链的长度也将不同
+                p1原型链 ： p1 -- 原型 -- 原型 --null
+                p2原型链 ： p2 -- 原型 --null（Object对象的原型）
+             
+            因此，读取对象的属性时，读取顺序为：先在对象自身寻找属性，如果有，则读取，没有就往对象的原型上查找，找打访问，没有继续往下一个原型找（原型链）...直到找到或Object对象的原型，返回undefined
+
+            作用域链 ：找变量，找不到给错误
+            原型链 ： 找属性，找不到给undefined
+        */
+        class Person {
+            name = '孙悟空';
+            age = 18;
+            // sayHello = function() {
+            //     console.log('我是自己人，优先派遣');
+            // }
+            sayHello() {
+                console.log(`大家好，我是${this.name}!`);
+            }
+          
+        }
+        const p1 = new Person();
+        // console.log(p1);
+        // p1.sayHello();
+
+        console.log(p1);
+        // console.log(p1.constructor);
+        console.log(p1.__proto__.__proto__.__proto__);
+
+        // console.log(p1.__proto__ === Object.getPrototypeOf(p1));
+        // console.log(Object.getPrototypeOf(p1));//调用方法获得原型对象
+
+        // const p2 ={
+        //     name : '猪八戒',
+        //     sayHello() {
+        //         console.log(`大家好，我是${this.name}!`);
+        //     }   
+        // };
+        // console.log(p2);
+        // console.log(p2.__proto__.__proto__);
+        // console.log(Object.getPrototypeOf(p2));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

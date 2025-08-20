@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象结构</title>
+    <script>
+        /* 
+            对象存储属性的区域：
+                1.对象本身
+                    通过对象自身创建的属性
+                    通过在创建对象的类中，使用x = y的形式创建的对象
+                2.原型对象（prototype）
+                    对象还有一些属性，存放在其他对象中（原型对象）（原型对象与对象是两个独立的对象）
+
+                对象中有一个隐藏属性（__proto__），存放了指向其原型对象的引用
+                原型对象也会负责存储对象属性，当进行访问对象属性时，会优先访问存放在对象自身区域的属性，如果没有找到要访问的属性，才会去原型对象中进行查找
+                如果当存放在对象本身和原型对象的属性重名，则会执行对象本身区域的属性
+
+                存放在原型对象中的属性 ：
+                    1.在类中，以xxx（）{}创建的方法
+                    2.主动添加到原型对象的属性和方法
+        */
+        class Person {
+            name = '孙悟空';
+            age = 18;
+            // sayHello = function() {
+            //     console.log('我是自己人，优先派遣');
+            // }
+            sayHello() {
+                console.log(`大家好，我是${this.name}!`);
+            }
+          
+        }
+        const p1 = new Person();
+        console.log(p1);
+        p1.sayHello();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
