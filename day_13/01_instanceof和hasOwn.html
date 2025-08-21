@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instance和hasOwn</title>
+    <script>
+        /* 
+            instanceof 检查一个对象是否是一个类的实例
+                使用instanceof检查某个对象是某个类的实例时，本质上检查这个对象的原型链上，是否出现了该类的prototype属性，出现了就是true，没有就是false
+
+        */
+        class Animal {
+
+        }
+        class Dog extends Animal {
+       
+        }
+        class Cat extends Animal {
+
+        }
+        // dog ——> Dog的原型对象 ——> Animal的原型对象 ——>Object的原型对象 ——>null
+        const dog = new Dog();
+        console.log(Dog.__proto__);
+        console.log(Animal)
+        let obj = Object()
+        // console.log(dog instanceof Dog);//true
+        // console.log(dog.__proto__ === Dog.prototype );
+        // console.log(dog.__proto__.__proto__ === Animal.prototype );
+        // console.log(dog.__proto__.__proto__.__proto__ === obj.__proto__);
+        // console.log(dog.__proto__.__proto__.__proto__.__proto__ === obj.__proto__.__proto__ );
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
