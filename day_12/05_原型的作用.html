@@ -49,14 +49,23 @@
         class Cat extends Animal {
 
         }
-        const a = new Animal();//a ——> Object ——>Object原型 ——>null 
-        const d = new Dog();//d ——> animal ——> Object ——>Object原型 ——>null
-        const c = new Cat();//a ——> animal ——> Object ——>Object原型 ——>null
-        console.log(c.__proto__.__proto__ === a.__proto__);
-        console.log(d.__proto__ === Animal);
+        const a = new Animal();//a  ——> Animal.prototype——> Object.prototype ——>null 
+        const d = new Dog();//d ——> Dog.prototype ——> Animal.prototype ——> Object.prototype ——>null 
+        const c = new Cat();//d ——> Cat.prototype ——> Animal.prototype ——> Object.prototype ——>null 
+
+        console.log(a.__proto__ === Animal.prototype);
+        console.log(d.__proto__ === Dog.prototype);
+        console.log(d.__proto__.__proto__ === Animal.prototype);//找的就是Dog.prototype.__proto__,按照子类的原型的__proto__指向父类的原型
+        console.log(d.__proto__.__proto__.__proto__ === Object.prototype);
+        console.log(d.__proto__.__proto__.__proto__.__proto__ === null);
+
+
+
+        // console.log(c.__proto__.__proto__ === a.__proto__);
+        // console.log(d.__proto__ === Animal);
 
         
-        // console.log(d.__proto__ === c.__proto__);//子类的原型就是父类的一个实例，那么就是两个不同的实例，自然不等
+        // console.log(d.__proto__ === c.__proto__);
         // console.log(a.__proto__.__proto__)
         // console.log(a.__proto__ === c.__proto__.__proto__ );//true
         // console.log(d.__proto__.__proto__ === c.__proto__.__proto__);

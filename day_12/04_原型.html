@@ -40,12 +40,13 @@
           
         }
         const p1 = new Person();
-        // console.log(p1);
-        // p1.sayHello();
-
         console.log(p1);
-        // console.log(p1.constructor);
-        console.log(p1.__proto__.__proto__.__proto__);
+        console.log(p1.__proto__ === Person.prototype);//proto指向构造函数的prototype
+        console.log(Person.prototype);//指向Person的原型
+        console.log(p1.__proto__.__proto__  === Object.prototype)  //p1.__proto__.__proto__：指向Object的prototype
+
+        // // console.log(p1.constructor);
+        console.log(p1.__proto__.__proto__.__proto__);//Object.prototype.__proto__ ：求Object原型的构造函数，没有，null
 
         // console.log(p1.__proto__ === Object.getPrototypeOf(p1));
         // console.log(Object.getPrototypeOf(p1));//调用方法获得原型对象
