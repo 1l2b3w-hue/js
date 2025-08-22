@@ -9,6 +9,12 @@
             instanceof 检查一个对象是否是一个类的实例
                 使用instanceof检查某个对象是某个类的实例时，本质上检查这个对象的原型链上，是否出现了该类的prototype属性，出现了就是true，没有就是false
 
+            in 运算符在检查一个属性是否在一个对象中时，并不会区分属性是在对象自身还是对象原型区域（通过原型链进行检查）
+
+            对象名.hasOwnProperty('属性名') ：检查属性名是否在对象的自身区域中 （不推荐使用）
+                如果使用Object.creat来改变一个对象的原型，使其指向空时，使用该方法会报错
+
+            Object.hasOWn(对象名 ， '属性名') ：检查属性是否在对象的自身区域中
         */
         class Animal {
 
@@ -21,15 +27,36 @@
         }
         // dog ——> Dog的原型对象 ——> Animal的原型对象 ——>Object的原型对象 ——>null
         const dog = new Dog();
-        console.log(Dog.__proto__);
-        console.log(Animal)
-        let obj = Object()
+        // console.log(Dog.__proto__);
+        // console.log(Animal)
+        // let obj = Object()
         // console.log(dog instanceof Dog);//true
         // console.log(dog.__proto__ === Dog.prototype );
         // console.log(dog.__proto__.__proto__ === Animal.prototype );
         // console.log(dog.__proto__.__proto__.__proto__ === obj.__proto__);
         // console.log(dog.__proto__.__proto__.__proto__.__proto__ === obj.__proto__.__proto__ );
        
+
+
+
+        class Person {
+            name = '孙悟空';
+            age = 18;
+            // sayHello = function() {
+            //     console.log('我是自己人，优先派遣');
+            // }
+            sayHello() {
+                console.log(`大家好，我是${this.name}!`);
+            }
+        }
+        const p = new Person();
+        // console.log('sayHello' in  p);
+
+        console.log(Object.hasOwn(p, 'sayHello'));
+        
+        // console.log('hasOwnProperty' in  p);//很明显，hasOwnProperty这个属性并不是在实例对象的自身区域中，而是在原型链的某一块原型中
+        // console.log(p.hasOwnProperty('sayHello'));
+        // console.log(Object.prototype.hasOwnProperty('hasOwnProperty'));//很明显，hasOwnProperty在Object的原型中
     </script>
 </head>
 <body>

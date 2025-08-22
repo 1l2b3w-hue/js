@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旧类</title>
+    <!-- 
+        在早期JS中，直接使用函数来定义类
+            对于函数如果直接使用 ：函数名（） 的形式调用时，此时这个函数就是一个普通函数
+            如果通过new来调用时 ：new 函数名（） ，此时这个函数就是构造函数
+        
+        通过构造函数创建类时，其属性的创建方式与constructor函数的创建属性方法一致
+        编写方法时，也可以写在构造函数中，但此时写入的方法并不想现在一样，是公共的，因此对于一些公共方法和属性，可通过直接写入原型来完成
+    -->
+    <script>
+        // 一般情况下，使用构造函数创建类时，由于代码的太过分散，为防止出现类还没声明完就创建对象的可能，将会使用立即执行函数括起并返回构造函数，
+        // let Person = (function () {
+        //     function Person(name, age) { //等价与class Person{ ... }
+        //         this.name = name;
+        //         this.age = age;
+        //     }
+        //     // 直接将方法、属性写入函数原型
+        //     Person.prototype.sayHello = function (name) {
+        //         console.log(this.name);
+        //     }
+        //     Person.prototype.worker = '唐僧徒弟';
+        //     // Person();//普通的函数调用
+
+
+        //     // 声明静态属性和静态方法
+        //     Person.staticteam = '取经团队';
+        //     Person.satticway = function () {
+        //         console.log("九九八十一难赢取真经");
+        //     }
+
+        //     return Person;
+        // })();
+        // const p = new Person('孙悟空', 18);//通过构造函数创建对象
+        // const p1 = new Person('猪八戒', 18);
+
+        // console.log(p);
+
+        // 利用构造函数实现两个类的继承
+        // 实现继承就是一个类的原型指向父类的实例
+        let Animal = (function() {
+            function Animal() {
+
+                
+            }
+            return Animal;
+        })()
+
+        let Cat = (function() {
+            function Cat() {
+
+            }
+            // 实现继承
+            Cat.prototype = new Animal();
+            return Cat;
+        })()
+        let cat = new Cat();
+        console.log(cat);
+        console.log(cat.__proto__.__proto__ === Animal.prototype);//true
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

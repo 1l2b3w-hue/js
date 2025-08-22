@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new运算符</title>
+    <script>
+        /* 
+
+        */
+        let Person = (function() {
+            function Person() {
+
+            }
+            //当构造函数的prototype是一个对象时，其创建出的对象的__proto__指向构造函数的Prototype;
+            //如果此时构造函数的prototype不指向一个对象,则创建的实例的__proto__将指向Object的prototype
+
+            // Person.prototype = 'a'; 
+            return Person;
+        })();
+        let p = new Person();
+        console.log(p.__proto__ === Person.prototype);
+        // console.log(p.__proto__ === Object.prototype);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
