@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组</title>
+    <script>
+        /* 
+             数组（Array） ：
+                一个复合数据类型，有序的存放多个不同数据类型的数据（对象是无序的）
+                数组中每个数据都会有一个唯一的索引（一组大于等于0的整数），可以通过索引来获取数据
+                存储在数组中的数据被称为元素
+                创建 ：
+                    通过new Array（）来创建一个数组
+                    数组字面量创建 ：[]
+                
+                创建数组元素 ：
+                    数字名[索引] = 元素
+
+                非连续数组 ：
+                    存放在数组中的元素之间有空的数组，
+                    一般情况下，应该避免非连续数组的使用，因为性能不好
+        */
+        // let obj = { name : '孙悟空' , age : 18 };
+        // console.log(obj);//无法通过顺序来获取某个数据
+
+        let arr = new Array();//构造函数调用实现创建数组
+        let arr2 = [];
+        arr[0] = 19;
+        arr[1] = 20;
+        arr[2] = 21;
+        arr[1] = 22;//实现覆盖
+        arr[100] = 24;
+        console.log(arr[10]);
+        
+        // console.log(arr2);
+        console.log(typeof arr);//返回一个object
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

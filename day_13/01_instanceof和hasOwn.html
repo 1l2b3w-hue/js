@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,7 @@
             in 运算符在检查一个属性是否在一个对象中时，并不会区分属性是在对象自身还是对象原型区域（通过原型链进行检查）
 
             对象名.hasOwnProperty('属性名') ：检查属性名是否在对象的自身区域中 （不推荐使用）
-                如果使用Object.creat来改变一个对象的原型，使其指向空时，使用该方法会报错
+                如果使用Object.create来改变一个对象的原型，使其指向空时，使用该方法会报错
 
             Object.hasOWn(对象名 ， '属性名') ：检查属性是否在对象的自身区域中
         */
@@ -20,7 +21,7 @@
 
         }
         class Dog extends Animal {
-       
+
         }
         class Cat extends Animal {
 
@@ -35,7 +36,7 @@
         // console.log(dog.__proto__.__proto__ === Animal.prototype );
         // console.log(dog.__proto__.__proto__.__proto__ === obj.__proto__);
         // console.log(dog.__proto__.__proto__.__proto__.__proto__ === obj.__proto__.__proto__ );
-       
+
 
 
 
@@ -53,13 +54,23 @@
         // console.log('sayHello' in  p);
 
         console.log(Object.hasOwn(p, 'sayHello'));
-        
+
         // console.log('hasOwnProperty' in  p);//很明显，hasOwnProperty这个属性并不是在实例对象的自身区域中，而是在原型链的某一块原型中
         // console.log(p.hasOwnProperty('sayHello'));
         // console.log(Object.prototype.hasOwnProperty('hasOwnProperty'));//很明显，hasOwnProperty在Object的原型中
+
+
+
+        const foo = Object.create(null);
+        foo.prop = "exists";
+        console.log((Object.hasOwn(foo, "prop1")));
+        // console.log(foo.hasOwnProperty('sayHello'));
+     
     </script>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>

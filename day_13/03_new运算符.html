@@ -6,7 +6,13 @@
     <title>new运算符</title>
     <script>
         /* 
-
+            使用new运算符时,new会完成的事情
+                使用new运算符调用一个函数时，会将函数作为构造函数调用
+                1.使用new调用函数时，会创建一个普通的对象————新对象（Object{}）
+                2.会指定新对象的原型[[Prototype]]指向构造函数的prototype
+                3.使用实参来执行构造函数时，会将函数中的this指向新对象
+                4.如果构造函数的返回值是一个非原始值，此时该值将会作为new运算符的返回值返回，（除非特殊需要，不然不设置返回一个非原始值）
+                    如果构造函数没有返回值（通常没有返回值）或者返回一个原始值时，此时将会把新对象作为new运算符的返回值返回
         */
         let Person = (function() {
             function Person() {
@@ -19,8 +25,40 @@
             return Person;
         })();
         let p = new Person();
+        console.log(typeof p);
         console.log(p.__proto__ === Person.prototype);
         // console.log(p.__proto__ === Object.prototype);
+
+
+        // 一个构造函数的隐藏内容 ：
+        function Animal() {
+            // var object = {
+            //     // 生成一个新对象
+            // };
+            // // 指定新对象的__proto__指向构造函数的prototype
+            // object.__proto__ = Animal.prototype;
+            // this = object;
+
+            // return {name : '花花'};//返回一个非原始值时，以该值作为new运算的的返回值，此时下面的cat将会指向返回的对象
+
+            return 1;//返回原始值后，cat还是接受新对象，并不接受原始值
+        }
+        let cat = new Animal();//使用new的方式来调用构造函数
+        console.log(cat);
+
+
+        class Dog {
+            // 与旧类一样，也会创建一个对象Object
+            // 然后将对象的原型[[Prototype]]指向Dog的prototype，
+            constructor() {
+                //将新对象设置为constructor的this
+                // 如果constructor返回一个非原始值，那么Dog类将会返回这个非原始值，
+                //如果无返回值或返回一个原始值，将会返回Dog类创建的实例对象
+                // return {};
+            }
+        }
+        let dog = new Dog();
+        console.log(dog);
     </script>
 </head>
 <body>
