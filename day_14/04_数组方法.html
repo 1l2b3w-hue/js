@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组方法</title>
+    <script>
+        /* 
+            多，通过MDN上学习吧
+
+            静态方法：
+            1.Array.isArray()
+                检查参数是否为数组，是就是true，不是就是false
+            2.Array.of()
+                根据传递的参数创建数组元素
+                与Array()的区别：
+                    创建单个元素时，Array(7)会创建7个连续的空值元素，而Array.of(7)会创建一个单元素7的数组
+
+            实例属性、方法：（先有一个实例）
+                非破坏性方法：
+                    不会影响原数组，只会返回一个新的数组
+                1.at():
+                    给定一个参数，根据参数正负来决定怎么找元素
+                        正数 ：从前往后开始找索引（索引等于参数）
+                        负数 ： 从后往前找这个负数的绝对值（从-1开始）（索引就是等于负数加arr.length）
+                2.concat():
+                    合并两个或多个数组(原封不动的将数组所有元素粘到另一个新数组)，并返回一个新数组
+                    数组名1.concat(数组名2,......) 将实例和参数中的数组按顺序（1，2...）粘到另一个数组中
+
+        */
+        // console.log(Array.isArray([1,2,3,4]));
+        // console.log(Array.isArray('123'));
+
+        let p = Array.of(3,6,1,89,21,7);
+        // // console.log(p);
+        // console.log(p.at(-2));
+        let a = [1,2,34,5,7,8];
+        let b = p.concat(a,[1,2,3],[0,78,23]);
+        console.log(p);
+        console.log(a);
+        console.log(b);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

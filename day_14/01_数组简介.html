@@ -12,10 +12,21 @@
                 存储在数组中的数据被称为元素
                 创建 ：
                     通过new Array（）来创建一个数组
-                    数组字面量创建 ：[]
+                    数组字面量创建 ：[](推荐)
                 
                 创建数组元素 ：
-                    数字名[索引] = 元素
+                    数组名[索引] = 元素
+                
+                读取数组元素：
+                    数组名[索引]
+                        当读取索引位置并没有存放元素时，返回undefined
+                
+                获取数组长度：
+                    数组名.length
+                        给出数组长度（元素个数）
+                    获取数组的长度为 ：元素最大索引+1
+                    可以通过arr[arr.length] 来为数组的最后一位赋值
+                    修改length时，如果length增大，数组多出相应数量的空元素；变小，则会删掉超出部分的元素。
 
                 非连续数组 ：
                     存放在数组中的元素之间有空的数组，
@@ -25,16 +36,26 @@
         // console.log(obj);//无法通过顺序来获取某个数据
 
         let arr = new Array();//构造函数调用实现创建数组
+        
         let arr2 = [];
         arr[0] = 19;
         arr[1] = 20;
         arr[2] = 21;
         arr[1] = 22;//实现覆盖
-        arr[100] = 24;
-        console.log(arr[10]);
+        arr[arr.length] = 33;
+        arr[arr.length] = 55;
+        arr[arr.length] = 60;
+        // arr.length = 5;
         
+        console.log(arr);
+
+        // // arr[100] = 24;
+        // console.log(arr[10]);
+        // console.log(arr.length);
+
+
         // console.log(arr2);
-        console.log(typeof arr);//返回一个object
+        // console.log(typeof arr);//返回一个object
 
     </script>
 </head>
