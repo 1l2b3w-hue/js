@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的复制</title>
+    <script>
+        /* 
+            复制必须要产生新的对象
+            注意：
+                原始值在内存中是唯一的，不可能出现两个相同的原始值
+        */
+        let arr = ['孙悟空','猪八戒','沙悟净'];
+        // let arr2 = arr;//指向同一个数组，并不是复制
+        // arr2[0] = '齐天大圣';//看起来是修改了孙悟空这个原始值，其实是改变了地址指向罢了，孙悟空还在
+        // console.log(arr);
+        // console.log(arr2);
+        //arr3是复制arr形成的数组，会指向一个新的数组，但是数组里面存放的元素地址还是指向原来数组的元素
+        let arr3 = arr.slice();
+        
+        arr3[0] = '齐天大圣';
+        console.log(arr);
+        console.log(arr3);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

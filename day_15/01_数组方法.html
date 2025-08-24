@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组方法</title>
+    <!-- 
+    非破坏性方法
+        indexOf():
+            查找指定元素第一次出现的索引
+            参数：a ， b ：（a表示你要找到在数组指定索引范围内（b~最大索引）第一次出现元素a，b表示开始进行检索的索引）
+                默认情况下，b不写和 b<-arr.length时，b就是0。
+                b是负值则会从后开始
+                当b>=arr.length时，不会寻找数组，返回-1
+            如果指定元素无法找到，返回-1,查询NaN时，也会返回-1；
+
+        lastIndexOf() :
+            查找指定元素最后一次出现的索引
+            索引查找范围是根据从b开始，反向查找，就是0~b；
+            b<-arr.length，返回-1，b>=arr.length和b为空时，b为0
+
+        join() :
+            将数组全部元素链接成一个字符串并返回该字符串。
+            参数 ：a 
+            默认没有a时，各元素通过','分隔；如果a为''各元素间没有字符分割;其余情况按照a中字符来分隔
+
+
+        slice() :
+            将数组中一块区域的元素复制出来放入另一个数组中(浅拷贝，浅复制)
+            参数 ：start  end（两个索引，会复制start~end间的元素）(前闭后开)
+            start<0时，从后开始；start<-arr.length 或 没有指定时 ,start为0;start>=arr.length时，不会提取元素  
+            当end<=start时，不会提取元素；end<-arr.length 不提取   ，当end>=arr.length或没有指定时,按照arr.length处理
+              
+    -->
+    <script>
+        // let arr = [1,5,1,5,87,43,8,10,NaN];
+        // // console.log(arr.indexOf(5));
+        // // console.log(arr.indexOf(5,2 ));
+        // // console.log(arr.indexOf(5,4));
+        // // console.log(arr.indexOf(NaN));
+        // // console.log(arr.indexOf(5,19));
+        // // console.log(arr.indexOf(5,-19));
+
+        // console.log(arr.lastIndexOf(1,2));
+        // console.log(arr.lastIndexOf(1,-7));
+        // console.log(arr.lastIndexOf(1,-8));
+
+        // console.log(arr.slice(-19,6));
+        // console.log(arr.slice(19));
+        // console.log(arr);
+
+
+
+
+
+
+        // let arr = ['孙悟空','猪八戒','沙悟净','唐玄奘'];
+        // console.log(arr.join());
+        // console.log(arr.join(''));
+        // console.log(arr.join('-'));
+        // console.log(arr.join('￥'));
+
+
+
+        // let arr = [1,2,2,2,3,6,87,2,4,3,65,];
+        // let arr1 = [];
+        // for(const element of arr){
+        //     if(!arr1.includes(element)) {
+        //         arr1.push(element);
+        //     }
+        // }
+        // console.log(arr1);
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
