@@ -17,7 +17,7 @@
         lastIndexOf() :
             查找指定元素最后一次出现的索引
             索引查找范围是根据从b开始，反向查找，就是0~b；
-            b<-arr.length，返回-1，b>=arr.length和b为空时，b为0
+            b<-arr.length，返回-1，b>=arr.length和b不被赋值时，会检查整个数组
 
         join() :
             将数组全部元素链接成一个字符串并返回该字符串。
@@ -33,7 +33,7 @@
               
     -->
     <script>
-        // let arr = [1,5,1,5,87,43,8,10,NaN];
+        let arr = [1,5,1,5,87,43,8,10,NaN];
         // // console.log(arr.indexOf(5));
         // // console.log(arr.indexOf(5,2 ));
         // // console.log(arr.indexOf(5,4));
@@ -44,9 +44,12 @@
         // console.log(arr.lastIndexOf(1,2));
         // console.log(arr.lastIndexOf(1,-7));
         // console.log(arr.lastIndexOf(1,-8));
+        // console.log(arr.lastIndexOf(1,0));//设置0时，只会查找第一位
+
 
         // console.log(arr.slice(-19,6));
         // console.log(arr.slice(19));
+        // console.log(arr.slice(-9));//start >= arr.length时，不进行提取
         // console.log(arr);
 
 

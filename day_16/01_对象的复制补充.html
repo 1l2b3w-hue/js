@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象复制补充</title>
+    <script>
+        /* 
+            ... :展开语法
+                枚举一个对象中的属性，并将键值对（属性名，值）放入新创建的对象中
+                将一个数组的元素展开到另一个数组中或作为函数参数。(可以进行浅复制)
+            
+            对象浅复制 ：
+                ...展开语法
+                    也会覆盖重名（覆盖会根据顺序进行覆盖，前面就被覆盖）
+                Object.assign（target， source）
+                    将source对象中的属性全部复制到target对象中，并将修改后的target作为返回值返回
+                    如果target对象中的属性名与source对象重名，将会进行覆盖
+        */
+        let arr = [ '孙悟空','猪八戒','沙和尚','唐僧' ];
+        // let arr1 = arr.slice();
+        // console.log(arr === arr1);
+
+        // let arr2 = [arr[0],arr[1],arr[2],arr[3]];
+        let arr2 = [...arr,'二郎神','哪吒'];//类似与上面的写法，也可以扩展数组
+        // console.log(arr);
+        // console.log(arr2);
+        // console.log(arr === arr2);
+
+
+        // let arr3 = [ 1,2,3,4,5];
+        // let sum = function(a,b,c,d,e,) {
+        //         return a+b+c+d+e;
+        // }
+        // console.log(sum(...arr3));
+
+         
+        let obj = {name : '孙悟空',age : 18};
+        let obj2 ={name : '猪八戒',...obj};
+        console.log(obj2);
+
+
+
+
+        // let obj2 = {name : '猪八戒'};
+        // let newObj2 = Object.assign(obj2,obj);
+        // console.log(obj);
+        // console.log(obj2);//打印name为孙悟空，说明obj对obj2进行了重名覆盖
+        // console.log(newObj2);
+        // console.log(newObj2 === obj2);//返回true，说明newObj2 和obj2指向同一个对象
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

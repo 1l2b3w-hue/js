@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>破坏性数组方法</title>
+    <script>
+        /* 
+            push()
+                一个或多个参数：a，b,c....
+                会在数组后添加一个元素，元素为参数，并返回修改后数组的长度；
+            pop()
+                一个参数：a
+                删掉数组中最后一个元素，最后返回被删掉的元素
+                如果数组为空，返回undefined
+            unshift()
+                一个或多个参数（a , b , c ...）
+                会将指定元素（参数）添加到数组开头，并返回修改后的数组长度
+                需要注意的是
+                    当一次传多参和单个单个将指定参数传入时，参数在数组上的顺序不同。
+            shift()
+                跟pop()方法差不多，但是他是删除数组第一个元素
+
+            splice()
+                三种参数 ：start number a,b,c...
+                从指定的索引（start）开始，删除number个元素，并在删除的地方添加后续的参数从当元素
+                删除（无abc），插入（number=0），替换（指定位置，范围，删除添加）
+                start范围 ：
+                    start可取正负（正前负后），当start < arr.length时以0开始。当大于等于arr.length，表现为不删除元素，但可以添加元素
+                    number取值上，负数和零将不会删除元素，当取值为正数时，会删除相应数量的元素，如果你想无限加参数时，因该将其设置为Infinity
+                    a,b,c...不设置时，只会删除，不添加
+                
+                返回值 ：返回一个包含了被删除的元素的数组，如果没有删除元素，则返回一个空数组
+
+            reverse() 
+                将一个数组中的元素颠倒顺序，并返回原来数组
+        */
+        let arr = [ 1, 2, 3, 4, 5, 6 ];
+        // console.log(arr);
+        // let count = arr.push(7);
+        // let count = arr.push(7,8,9);
+
+        // let count = arr.pop();
+        // arr = [];
+        // let count =arr.pop();//返undefined
+
+        // let count = arr.unshift(1)
+        // let count = arr.unshift(1,2,3)//呈现:1，2，3，1，2，3，4，5，6
+        // arr.unshift(1)
+        // arr.unshift(2)
+        // let count = arr.unshift(3) //呈现:3,2,1,1,2,3,4,5,6
+
+        // let count = arr.shift();
+        // arr = [];
+        // let count = arr.shift();
+
+
+        // let count = arr.splice(6,5,1,2,3,4); //超出arr.length后，显示添加元素 ,并返回一个空的数组
+        // arr.splice(-6,5) //小于-arr.length后，以0开始
+        // arr.splice( 0,0,1,2,3,5);
+        // let count = arr.splice(1,2);
+
+
+        let count = arr.reverse();  
+
+        console.log(arr);
+        console.log(count);
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
