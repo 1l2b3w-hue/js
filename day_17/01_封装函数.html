@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封装函数</title>
+    <script>
+        /* 
+            将一个功能进行封装成函数，方便调用实现同意功能
+        */
+        let arr = [9, 1, 3, 2, 8, 0, 5, 7, 6, 4];
+        // let arr1 = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
+
+
+
+
+        class Person {
+            constructor(name,age) {
+                this.name = name;
+                this.age = age;
+            }
+
+        }
+
+        let PersonAll = [
+            new Person('孙悟空', 18),
+            new Person('猪八戒', 20),
+            new Person('红孩儿', 8),
+
+        ]
+
+        let home = [
+            new Person('张三',19),
+            new Person('李四',9),
+            new Person('王五',10),
+        ]
+        function unAdult(a) {
+            let children = [];
+            for(let b of a ) {
+                if(b.age < 18) {
+                    children.push(b);
+                }
+            }
+            return children;
+        }
+
+        console.log(unAdult(PersonAll));
+        console.log(unAdult(home));
+
+
+
+
+
+
+
+        //不破坏原数组，创建一个数组浅复制
+        // function choose(b) {
+        //     let a = [...b];
+        //     for (let i = 0; i < a.length; i++) {
+        //         let min = i;
+        //         for (let j = i + 1; j < a.length; j++) {
+        //             if (a[min] > a[j]) {
+        //                 min = j;
+        //             }
+        //         }
+        //         let tempt = a[min];
+        //         a[min] = a[i];
+        //         a[i] = tempt;
+        //     }
+        //     return a;
+        // }
+        // console.log(arr);//没改变数组
+        // console.log(choose(arr));
+        // let arr2 = choose(arr);
+        // console.log(arr2);
+        //封装函数（破环）
+        // function choose(a) {
+        //     for (let i = 0; i < a.length; i++) {
+        //         let min = i;
+        //         for (let j = i + 1; j < a.length; j++) {
+        //             if (a[min] > a[j]) {
+        //                 min = j;
+        //             }
+        //         }
+        //         let tempt = a[min];
+        //         a[min] = a[i];
+        //         a[i] = tempt;
+        //     }
+        //     return a;
+        // }
+        // //只适配于arr这个数组，无法做到实现适配其他数组
+
+        // console.log(choose(arr));
+        // console.log(choose(arr1));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
