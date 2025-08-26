@@ -10,7 +10,6 @@
                 一个或多个参数：a，b,c....
                 会在数组后添加一个元素，元素为参数，并返回修改后数组的长度；
             pop()
-                一个参数：a
                 删掉数组中最后一个元素，最后返回被删掉的元素
                 如果数组为空，返回undefined
             unshift()
@@ -33,7 +32,7 @@
                 返回值 ：返回一个包含了被删除的元素的数组，如果没有删除元素，则返回一个空数组
 
             reverse() 
-                将一个数组中的元素颠倒顺序，并返回原来数组
+                将一个数组中的元素颠倒顺序，并返回逆转后的数组
         */
         let arr = [ 1, 2, 3, 4, 5, 6 ];
         // console.log(arr);
@@ -44,7 +43,7 @@
         // arr = [];
         // let count =arr.pop();//返undefined
 
-        // let count = arr.unshift(1)
+        let count = arr.unshift(1)
         // let count = arr.unshift(1,2,3)//呈现:1，2，3，1，2，3，4，5，6
         // arr.unshift(1)
         // arr.unshift(2)
@@ -61,7 +60,7 @@
         // let count = arr.splice(1,2);
 
 
-        let count = arr.reverse();  
+        // let count = arr.reverse();  
 
         console.log(arr);
         console.log(count);

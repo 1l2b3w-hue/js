@@ -11,17 +11,29 @@
                 取出一个数，然后将其他的数与之比较，根据要求交换顺序
         */
         let arr = [9,1,3,2,8,0,5,7,6,4];
-        for (let i = 0; i < arr.length - 1; i++) {
-            for (let j = i + 1; j < arr.length; j++) {
-                if (arr[i] > arr[j]) {
-                    let n = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = n;
-                }
+        // for (let i = 0; i < arr.length - 1; i++) {
+        //     for (let j = i + 1; j < arr.length; j++) {
+        //         if (arr[i] > arr[j]) {
+        //             let n = arr[i];
+        //             arr[i] = arr[j];
+        //             arr[j] = n;
+        //         }
 
+        //     }
+        // }
+
+        for(let i = 0 ; i < arr.length ; i++) {
+            let min = i;
+            for(let j = i + 1 ; j < arr.length ; j++ ) {
+                if(arr[min] > arr[j]) {
+                    min = j;
+                }
             }
+            let tempt = arr[min];
+            arr[min] = arr[i];
+            arr[i] = tempt;
         }
-        console.log(arr);
+        console.log(arr);     
     </script>
 </head>
 
