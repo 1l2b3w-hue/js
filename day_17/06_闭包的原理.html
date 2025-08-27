@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包的原理</title> 
+    <script>
+        /* 
+            函数的作用域(词法作用域)在创建时就已经确定（包括作用域链），与调用位置无关 （作用域生下来就已经确定）
+
+
+            原理 ：
+                闭包利用了词法作用域
+        */
+        let a = "全局变量";
+        function fn() {
+            console.log(a);
+        }
+        function fn2() {
+            let a = '函数变量';
+            fn();
+            console.log(a);
+        }
+        // fn2();
+        function fn3() {
+            let a = '函数fn3变量a'
+            function fn4() {
+
+                console.log(a);
+
+            }
+            return fn4;
+        }
+        let result = fn3();
+        result();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

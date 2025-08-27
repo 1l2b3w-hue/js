@@ -881,7 +881,7 @@ for(初始化表达式;条件表达式;更新表达式) {
 
 ​			一个普通对象的构造函数是Object
 
-​			子类原型的__ proto__  将会指向父类原型的prototype，子类的构造函数原型指向父类
+​			子类原型的__ proto__  将会指向父类原型的prototype.
 
 ​			let a = Object.creat(b) :指将a的__ proto__ 修改为指向b
 

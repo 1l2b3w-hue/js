@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高阶函数2</title>
+    <script>
+        /* 
+            高阶函数的返回值是函数的情况
+            通过高阶函数，动态生成一个新的函数，包括旧函数功能和扩展功能
+        */
+        function someFn() {
+            /* 
+                在bu修改someFn函数的前提下，新增打印‘记录日志’的功能
+            */
+            return 'hello';
+        }
+        function fn(cb) {//即有有someFn函数的功能，又新增了记录日志的功能
+            return () => {
+                console.log('记录日志...')
+                let result = cb();
+                return result;
+            };
+        }
+        function see() {
+
+            return 'I see you';
+        }
+
+        let result = fn(someFn);
+        console.log(result());
+        let result1 = fn(see);
+        console.log(result1());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

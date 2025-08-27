@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高阶函数1</title>
+    <script>
+
+        /* 
+            通常情况下，回调函数一般为匿名函数（立即执行函数）
+
+            高阶函数 ：
+                一个函数的参数和返回值是函数时，这个函数就是高阶函数
+                
+                将一个函数作为参数，可以实现对另一个函数的动态传递代码
+        */
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+        }
+        let PersonAll = [
+            new Person('孙悟空', 19),
+            new Person('猪八戒', 20),
+            new Person('红孩儿', 8),
+
+        ]
+        function unAdult(a, fun) {
+            let children = [];
+            for (let b = 0 ; b < a.length; b++ ) {
+                if (fun(a[b])) {//实现代码的动态实现
+                    // 针对于扩展开放，修改关闭的OCP原则来讲，修改一个功能完好的函数是不正确的，修改后会导致其他使用函数的场合发生意想不到的错误，因此
+                    // 直接写死是不行的（if里面写死a.name === '孙悟空'）
+                    /* 
+                        b.age > 18
+                        b.age > 60 or b.age > n
+                        b.name === '....'
+                    */
+                    children.push(a[b]);
+                }
+            }
+            return children;
+        }
+        // function fn(a) {
+        //     // return true;
+        //     // return false ;//根据返回值影响if判断
+        //     // return a.age < 18 ;//因此，可以1通过修改fn的返回值，来实现不同的筛选
+        //     // return a.age > 18 ;
+        //     return a.name === '孙悟空';
+        // }
+        // console.log(unAdult(PersonAll,() => {alert(123)}),);
+        console.log(unAdult(PersonAll, a => a.name === '孙悟空'),);//直接传递立即执行函数，想怎么筛选就怎么选
+        console.log(unAdult(PersonAll, a => a.age > 18),);
+
+        let arr = [1,2,3,4,5,6,7,8,9,10];
+        console.log(unAdult(arr, a => a % 2 === 0));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

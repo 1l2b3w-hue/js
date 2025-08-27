@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数</title>
+    <script>
+        /* 
+            创建一个函数，第一次调用打印1，二次调用2....
+
+                通过创建全局变量可以实现要求，但是设置的全局变量很容易发生更改从而导致后续打印出错,如何将这个变量藏起来
+
+                可以通过函数作用域中的变量在函数中起作用来隐藏不想让外部访问的变量
+
+            闭包 ：
+                就是可以访问到外部函数作用域中的变量的函数
+            
+            使用场景 ：
+                想要隐藏一些不希望被其他人所访问到的内容时，可以通过闭包实现
+
+            实现 ：
+                想要函数嵌套
+                内部函数需要访问外部函数的变量
+                需要将内部函数作为外部函数的返回值返回
+        */
+        // var count = 1;
+        // function add() {
+        //     console.log(count++);
+
+        // // }
+        // add();
+        // add();
+        // add();
+
+        function add() {
+            let num = 0;
+            return () => {//return的箭头函数就是一个闭包
+                num++;//向上寻找num变量
+                console.log(num);
+            }
+        }
+        let result = add();
+        result();
+        result();
+        // num = 1000;//这里只会生成一个window中的属性，并不会改变函数作用域中num的值
+        // console.log('num' in window);
+        result();
+     
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
