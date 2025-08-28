@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数递归</title>
+    <script>
+        /* 
+            递归 ：
+                调用自身的函数就是递归函数
+                递归的作用与循环基本一致，不同点在于，递归不需要分析问题的实现，更注重问题的拆解（思路简单，慢）；循环性能高
+                在开发中，尽量去使用循环，少用递归；只会在解决麻烦的问题上，使用递归
+
+            将一个大问题拆分成小问题，逐个解决小问题（核心）
+
+            两个条件 ：
+                1.基线条件 —— 递归的终止条件
+                2.递归条件 —— 任何对问题进行拆分
+        
+        */
+        let result = (n) => {
+            if(n === 1){
+                return 1;
+            }
+            return result(n-1)*n;//调函数就要开辟函数作用域，会占据内存空间
+        }
+        console.log(result(5));
+        // function result(n) {
+        //     let sum = 1;
+        //     for(let i = 1 ; i <= n ; i++) {
+        //             sum *= i;
+        //     }
+        //     return sum;
+        // }
+        // console.log(result(10));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

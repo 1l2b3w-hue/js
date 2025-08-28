@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>递归练习</title>
+    <script>
+        function fn(n) {
+            if(n < 3) {
+                return 1;
+            }
+            return fn(n - 1) + fn(n - 2);
+        }
+        console.log(fn(30));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
