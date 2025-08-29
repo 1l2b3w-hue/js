@@ -50,13 +50,13 @@
                     3.元素索引 : 当前要进行运算的元素索引
                 对数组为空使用reduce方法时，如果没有定义初始值，这会报错，如果有初始值会返回初始值
         */
-        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        arr = [];
-        let a = arr.reduce((a,b,c) => {
-            console.log(a,b,c);
-            return a + b 
-        },1) 
-        console.log(a);
+        // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // arr = [];
+        // let a = arr.reduce((a,b,c) => {
+        //     console.log(a,b,c);
+        //     return a + b 
+        // },1) 
+        // console.log(a);
 
         
    
@@ -110,27 +110,27 @@
 
 
         // let arr = [ 1,6,3,NaN,2,5,4,Infinity];
-        // let arr = [1,6,2,7,9,3,5,4,8,10];
+        let arr = [1,6,2,7,9,3,5,4,8,10];
         // console.log(arr);
         // arr.sort();
         // console.log(arr);
-        // function fn(a,b) {
-        //     if(a > b) {
-        //         return 1;//将a排到后面
-        //         // return -1;
-        //     }
-        //     else if (a < b) {
-        //         return -1;//将a排到前面
-        //         // return 1;
-        //     }
-        //     else {
-        //         return 0;//保持不变
-        //     }
-        //     // return b - a ;
-        // }
-        // arr.sort(fn);
-        // // arr.sort()//在不调用函数的情况下，判断数组中数字会产生冲突，因为是按照字符串比较，在比较10和2时，默认先将1与2比，发现2大于1，所以10小于2
-        // console.log(arr);
+        function fn(a,b) {
+            if(a > b) {
+                return 1;//将a排到后面
+                // return -1;
+            }
+            else if (a < b) {
+                return -1;//将a排到前面
+                // return 1;
+            }
+            else {
+                return 0;//保持不变
+            }
+            // return b - a ;
+        }
+        arr.sort(fn);
+        // arr.sort()//在不调用函数的情况下，判断数组中数字会产生冲突，因为是按照字符串比较，在比较10和2时，默认先将1与2比，发现2大于1，所以10小于2
+        console.log(arr);
     </script>
 </head>
 

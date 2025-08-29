@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数补充</title>
+    <script>
+        /* 
+            函数调用 ：
+                函数名（）；
+                通过函数对象的形式调用函数  
+                    函数名.call()
+                    函数名.apply
+                    
+                    两个方法传递的第一个参数，将会是函数this的指向
+                    
+                    call()方法调用函数时，实参一一列出即可，第一个参数是this指向，后面的参数作为实参传递给函数
+                    apply()方法调用函数时，需要使用数组来传递实参
+        */  
+
+        function fn2(a,b) {
+
+            console.log('a = ',a,'b = ',b);
+        }
+
+        // fn2.call(fn2,10,20);
+        fn2.apply(fn2,[10,20 ]);
+
+        // function fn() {
+        //     console.log(this);
+        // }
+
+        // // fn();//函数调用
+        // let obj = {name : '孙悟空', fn};
+        // // obj.fn()//方法调用
+        // let b = 0;
+
+
+        // // fn.call(obj);//传递的参数是谁，this就是谁
+        // fn.apply(fn);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
