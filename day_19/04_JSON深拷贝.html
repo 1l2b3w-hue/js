@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON深拷贝</title>
+    <script>
+        /* 
+
+        */
+        let obj = {
+            name : '孙悟空',
+            age : 18,
+            gender : '男',
+            friend : {
+                name : '猪八戒',
+                age :28
+            }
+        }
+        
+        // let string = JSON.stringify(obj);
+        // let obj2 = JSON.parse(string);
+        // obj2.friend.name = '沙悟净'; //并不影响obj的指向，说明obj和obj2是完全独立的对象
+        // console.log(obj);
+        // console.log(obj2);
+        // console.log(obj.friend === obj2.friend);
+       
+        // 浅复制
+        // let obj3 = Object.assign({},obj);//浅拷贝，复制一层
+        // obj3.friend.name = '沙悟净';
+        // console.log(obj);
+        // console.log(obj3.friend === obj.friend);//指向同一个对象
+
+        // 深复制
+        let obj2 =  structuredClone(obj);
+        console.log(obj);
+        console.log(obj2);
+        console.log(obj.friend === obj2.friend);
+        obj2.friend.name = '沙悟净';
+        console.log(obj,obj2);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

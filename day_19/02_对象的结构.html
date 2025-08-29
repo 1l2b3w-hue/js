@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的解构</title>
+    <script>
+        /* 
+            对象在解构时，采用{}进行接受
+                进行解构时，变量会自动寻找相匹配的属性赋值（与变量顺序无关），如果没有找到，则为undefined，
+                声明并解构时没有问题，但是在先声明，再解构时，要求解构时带上{}
+                可以取别名和默认值
+        */
+        // let obj = {name : '孙悟空', age : 18 , gender : '男'};
+        // // let {name,age,address}= obj;//可以乱顺序，进行解构时，变量会自动寻找相匹配的属性赋值
+        // // let name,age,gender,address;
+        // // ({name,age,gender,address} = obj);//出现错误，JS解释器会将前面的大括号（大括号开头）看成代码块，给一个代码块赋值是不正确的,加一个括号使其不认为是代码块就行
+        // // console.log(name,age,address);
+
+        // let {name : a , age : b , gender : c , address  : d = '花果山'  } = obj;//将name的值赋值给a（称为别名），age的值赋值给b.... 设置address的值，默认为花果山
+        // console.log(a,b,c,d);
+        let qu = {
+            first : {name : '孙悟空', age : 18 , gender : '男'},
+            second : {name : '猪八戒', age : 18 , gender : '男'},
+            third : {name : '沙和尚', age : 18 , gender : '男'},
+        };
+        let {first,second,third} = qu;
+        console.log(first,second,third);
+        let {name,age,gender} = first;
+        console.log(name,age,gender);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map 对象</title>
+    <script>
+        /* 
+        Map 
+            用于存放键值对结构的数据（key-value）
+            Object存放的数据也可以看成键值对结构
+            实现 ：
+                let 变量名 = new Map()
+            添加数据 ：
+                通过set添加
+                变量名.set(key，属性值) (如果想使用字符串作为key时，需要使用双引号和单引号，否则将会识别为变量名)
+            取数据 ：
+                通过get获取 ，变量名.get(key)，只会取出相同key存放的属性值 
+                
+            删除 ：
+                通过delete进行删除。变量名.delete(key)，删除指定的key属性
+
+            检查是否存在指定键值对 
+                通过has检查。 变量名.has(key),检查是否含有指定key。返回true和false
+
+            清空 ：
+                变量名.clear()
+            map.size : 显示一个map中存放的键值对数
+
+
+        与Object主要区别：
+            object的属性名只能是字符串和符号，当使用非字符串和符号类型的数据去设置为属性名时（在不通过字符串设置属性名时，需要加上中括号修饰），JS解释器会自动将其转换为字符串。
+            Map中，任何数据类型都可以成为属性名
+
+        
+
+        */
+        let map = new Map();
+        let obj2 = {name : 1};
+        let obj3 = {};
+        map.set('name','猪八戒');
+        map.set(obj3,'空对象');
+        map.set(NaN,'错误');
+        map.delete(NaN);
+        console.log(map);
+        console.log(map.size);
+        console.log(map.get('name'));
+        console.log(map.get(obj3));
+        // console.log(map.get({}));//必须使用相同的属性名来取，即使是两个{}也不相同
+        console.log(map.get(NaN));
+        console.log(map.has(NaN));
+        console.log(map.has('name'));
+        map.clear();
+        console.log(map);
+
+
+
+
+
+
+
+
+
+
+        let obj = {
+            name : '孙悟空',
+            age :18,
+            [Symbol()] : '大师兄',
+            [{}] : 1,  //这里看起来像是通过对象来设置属性名，其实JS会将其转换为字符串，因此这里的属性名为 ：'[{}]'
+        }
+        console.log(obj[{}]);
+        console.log(obj[obj]);//传递任何对象都能取出1，因为都会自动转换为字符串
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map补充</title>
+    <script>
+        /* 
+            from() :
+                数组的一个静态方法
+                将一个数组中的元素放到另一个数组中
+
+            将map转换为数组时(from、...展开)，会将map中的每个键值对看成一个数组，键和值都会成为每个数组的元素 （map转换为数组时，形成了一个二位数组）
+            
+            将一个二位数组转换为map
+
+            遍历map :
+                每次将会拿到一个数组，存放着一对键值对 
+
+            map的方法 ：
+                keys() : 获取map的所有键，顺序不变 （可以同过该方法获取全部的键）
+                values() : 获取map的所有值，顺序不变 当keys,values连用时，并不会为新的map创建完整的键值对，而是后者覆盖前者 （可以同过该方法获取全部的键）
+                entries() : 获取所有的键值对
+        */
+        let map = new Map();
+        map.set("name",'孙悟空');
+        map.set("age",25);
+        map.set("gender",'男');
+        console.log(map);
+        // console.log(map.get('name'));
+
+        let map2 = map.entries();
+        console.log(map2);
+
+        // let map2 = map.keys();
+        // console.log(map2);
+        // map2 = map.values();
+        // console.log(map2)
+
+        // for(let i of map.keys()) {
+        //     console.log(i);
+        // }
+        // for(let i of map.values()) {
+        //     console.log(i);
+        // }
+
+        // // map转数组
+        // let arr = Array.from(map);
+        // console.log(arr); 
+        // let arr2 = [...map];
+        // console.log(arr2);
+        
+        // let map2 = new Map([['name','猪八戒'],['age',18],[{},() => {}]]);
+        // console.log(map2);
+
+        // for(let i of map) {
+        //     let [key,name] = i
+        //     console.log(i,key,name);
+        // }
+        // for(let [key,name] of map2) {
+        //     console.log(key,name);
+        // }
+        // map.forEach((key,name,map) => {
+        //     console.log(key,name,map);
+        // })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

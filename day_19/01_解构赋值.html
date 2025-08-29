@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解构赋值</title>
+    <script>
+        /* 
+            分解一个对象的结构，将其赋值给其他人
+
+            数组进行解构时，使用[],当变量多于数组元素时，多出的变量赋值为undefined；当变量少于数组元素时，多出元素不赋值
+            ...变量 ：将剩下的元素都赋值给这个变量，使用数组进行存储
+
+            当一个数组的元素还是数组时，这个数组就是二位数组
+        */
+        let arr = [[1,2,3],[4,5,6]];//二位数组,一般用于表示表格，
+        console.log(arr);
+        console.log(arr[0],arr[1]);//表示行
+        console.log(arr[0][0],arr[1][0]);//表示一行中的列
+
+
+        // 解构二位数组 
+        let [[a,b,c],[d,e,f]] = [[1,2,3],[2,4,5]]
+        console.log(a,b,c,d,e,f);
+
+        // for(let i of arr) {
+        //     for(let j of i){
+        //         console.log(j);
+        //     }
+
+        // }
+
+
+
+        // let arr = ['孙悟空','猪八戒','沙悟净'];
+
+        // // let [d,e,f] = arr;//定义了三个变量，并将数组进行解构分别赋值给这三个变量
+
+        // let [d,e,f,g] = ['唐僧','白龙马','西天取经','东土大唐'];//声明并解构
+
+        // console.log(d,e,f,g);
+
+        // [d,e,f,g] = [1,2,3];
+        // console.log(d,e,f,g);//并不保留之前的内容，因为你重新给他赋值了，肯定不会保留
+
+        // [d,e,f,g = 10] = [1,2,3,3];//在解构时，可以为变量赋值默认值(可以赋自身，当没有元素为其赋值时，保持自身不动)，如果没有元素为其赋值时，将被赋值为默认值，有元素为其赋值时，取元素值
+        // console.log(d,e,f,g);
+
+        // let [n1,n2,...n3] = [4,5,6,7]; //...变量 ：将剩下的元素都赋值给这个变量，使用数组进行存储
+        // console.log(n1,n2,n3);
+
+        // // 函数解构 
+        // function fn() {
+        //     return ['孙悟空','猪八戒'];
+        // }
+        // let [name1,name2] = fn();
+        // console.log(name1,name2);
+
+        // //利用解构赋值快速交换两个变量的值
+
+        // let a = 10 ,b = 20;
+        // console.log('a = ',a,'b = ',b);
+        // [a,b] = [b,a];
+        // console.log('a = ',a,'b = ',b);
+
+        // arr = ['孙悟空','猪八戒'];
+        // console.log(arr);
+        // [arr[0],arr[1]] = [arr[1],arr[0]];
+        // console.log(arr);
+
+
+        // let a, b, c;
+
+        // //解构复制
+        // [a,b,c] = arr;//相当于 = ['孙悟空','猪八戒','沙悟净'] 对a，b，c一一赋值
+
+        // // a = arr[0];
+        // // b = arr[1];
+        // // c = arr[2];
+        // console.log(a,b,c);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
