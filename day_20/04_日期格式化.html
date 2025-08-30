@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日期格式化</title>
+    <script>
+        /* 
+            日期格式化
+
+                toLocaleDateString() : 将实例中时间的日期转换为本地日期（当地习惯的时间格式）字符串
+                toLocaleTimeString() : 将实例中时间的时间转换为本地时间字符串
+                toLocaleString() : 将实例中时间全部转换为本地时间字符串（上面的结合）
+                    参数 ： 
+                        1.描述语言和国家信息的字符串
+                            zh-CN ： 中国(简体繁体都可以)
+                            zh-HK ： 香港 zh-PW ： 台湾
+                            en-US : 美国
+                        2.需要一个对象，通过在对象中设置属性来对日期格式进行配置 （按照这个来优先配置）
+                            dateStyle : 日期格式
+                            timeStyle ： 时间格式
+                                full : 完整显示
+                                long
+                                medium
+                                short
+                            hour12 : 是否使用12小时制
+                            weekday : 星期显示方式
+                                long、short、narrow、
+                        
+        */
+        const day = new Date();
+
+        let result = day.toLocaleDateString();
+        result = day.toLocaleTimeString();
+        result = day.toLocaleString('zh-CN',{dateStyle : 'full',timeStyle : 'full',hour12 : true,});
+        // result = day.toLocaleString('zh-CN',{dateStyle : 'long',timeStyle : 'long'});
+        // result = day.toLocaleString('zh-CN',{dateStyle : 'medium',timeStyle : 'medium'});
+        // result = day.toLocaleString('zh-CN',{dateStyle : 'short',timeStyle : 'short'});
+        console.log(result);
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

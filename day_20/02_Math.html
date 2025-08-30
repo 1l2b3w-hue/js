@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math</title>
+    <script>
+        /* 
+            Math : 一个工具类(不能创建实例)，提供了一些数学运算相关的常量和方法
+            
+                静态属性 ：
+                    PI ： 给出圆周率的值
+
+                静态方法 ：
+                    abs() ：求一个数的绝对值
+                    min() : 求多个值中的最小值
+                    max() ： 求多个值中最大的值
+                    pow() : 求x的y次方
+                    sqrt() : 求一个数的平方根   
+                    取整
+                    floor() : 向下取证，取小数
+                    ceil() : 向上取整，取大数
+                    round() : 四舍五入取整
+                    trunc() : 直接舍弃小数部分
+
+                    random() : 生成一个0~1之间（包括0，但不包括1）的随机数（通过电脑计算出来的伪随机数）
+                            可以通过乘以某个数值来扩大这个随机生成数的范围 还可以通过取整来修饰这个范围的随机数使其成为随机整数
+                            生成一个x ~ y 范围的整数 
+                                Math.round(Math.random()*(y-x) + x);
+                                Math.floor(Math.random()*（y-x+1 + x); 
+                                Math.ceil(Math.random()*(y-x + 1))-1;
+                                Math.trunc(Math.random()*(y-x + 1));
+
+        */
+    
+        let result = Math.abs(-10);
+        let arr = [10,21,54,8,12,10];
+        result = Math.min(...arr);
+        result = Math.max(...arr);
+        result = Math.pow(5,4);
+        result = Math.sqrt(4); // 4 ** .5
+        result = Math.floor(-2.9);//，可以取-2和-3，但是取小数-3
+        result = Math.floor(2.9);
+        result = Math.ceil(-2.9);
+        result = Math.round(2.9);
+        result = Math.round(2.4);
+        result = Math.trunc(2.4);
+        result = Math.trunc(2.9);
+        for(let i = 0; i < 50 ; i++) {
+            //0-5的随机数
+            // let ran = Math.round(Math.random()*5);
+            // let ran = Math.floor(Math.random()*6);
+            // let ran = Math.ceil(Math.random()*6) - 1;
+            // let ran = Math.trunc(Math.random()*6 );
+            // 11 - 20 
+            // let ran = Math.round(Math.random()*9 + 11);
+            // let ran = Math.floor(Math.random()*10 + 11);
+            // let ran = Math.ceil(Math.random()*10 + 11) -1 ;
+            let ran = Math.trunc(Math.random()*10 + 11);
+            console.log(ran);
+        }
+
+        console.log(Math.PI);
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

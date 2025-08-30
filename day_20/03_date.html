@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+    <script>
+        /* 
+            Date :
+                JS中，所有跟时间相关的数据由Date来表示
+
+            创建 ： 
+                new Date(); :直接通过new来创建的对象时，表示当前代码执行的时间
+
+                创建指定时间 ：
+                    为Date传递一个表示时间的字符串 字符串格式 ：月/日/年 时/分/秒 ; 年-月-日T时：分：秒 
+
+                    直接传递时间，使用逗号隔开  格式 ： 年，月（索引），日，时，分，秒
+
+                    传递一个时间戳
+
+            静态方法 ： now() ： 返回现在时间的时间戳
+            
+            对象实例方法 ：
+                getFullYear() : 获取一个实例的完整的年份
+                getMonth() : 获取一个实例的月的索引 完整索引范围 ： 0~11
+                getDate() : 获取一个实例的日
+                getDay() : 返回一个实例的星期 范围 0~6 0 是周日
+                getTime() : 返回当前时间的时间戳
+                    时间戳 ： 指从1970年1月1日0时0分0秒到当前时间的毫秒数 计算机底层在存放时间时，都是采用时间戳存放
+                        为什么使用 ：因为年月日时分秒的进制都不同，存储麻烦，于是同一单位采用毫秒
+        */
+        let d = new Date();
+        console.log(d);
+        let m = new Date("10/23/1977 12:00:00");
+        m = new Date('2035-08-30T15:00:00');
+        
+        let result = m.getFullYear();
+        result = m.getMonth();
+        result = m.getDate();
+        result = m.getDay();
+        result = m.getTime();
+        console.log(result);
+        console.log(Date.now());
+        let a = new Date(1756540139976);
+        console.log(a);
+
+
+        m = new Date(2024,7,20,10,20,30);
+        console.log(m);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
