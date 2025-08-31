@@ -33,35 +33,66 @@
 
         */
     
-        let result = Math.abs(-10);
-        let arr = [10,21,54,8,12,10];
-        result = Math.min(...arr);
-        result = Math.max(...arr);
-        result = Math.pow(5,4);
-        result = Math.sqrt(4); // 4 ** .5
-        result = Math.floor(-2.9);//，可以取-2和-3，但是取小数-3
-        result = Math.floor(2.9);
-        result = Math.ceil(-2.9);
-        result = Math.round(2.9);
-        result = Math.round(2.4);
-        result = Math.trunc(2.4);
-        result = Math.trunc(2.9);
-        for(let i = 0; i < 50 ; i++) {
-            //0-5的随机数
-            // let ran = Math.round(Math.random()*5);
-            // let ran = Math.floor(Math.random()*6);
-            // let ran = Math.ceil(Math.random()*6) - 1;
-            // let ran = Math.trunc(Math.random()*6 );
-            // 11 - 20 
-            // let ran = Math.round(Math.random()*9 + 11);
-            // let ran = Math.floor(Math.random()*10 + 11);
-            // let ran = Math.ceil(Math.random()*10 + 11) -1 ;
-            let ran = Math.trunc(Math.random()*10 + 11);
-            console.log(ran);
-        }
+        // let result = Math.abs(-10);
+        // let arr = [10,21,54,8,12,10];
+        // result = Math.min(...arr);
+        // result = Math.max(...arr);
+        // result = Math.pow(5,4);
+        // result = Math.sqrt(4); // 4 ** .5
+        // result = Math.floor(-2.9);//，可以取-2和-3，但是取小数-3
+        // result = Math.floor(2.9);
+        // result = Math.ceil(-2.9);
+        // result = Math.round(2.9);
+        // result = Math.round(2.4);
+        // result = Math.trunc(2.4);
+        // result = Math.trunc(2.9);
+        // for(let i = 0; i < 50 ; i++) {
+        //     //0-5的随机数
+        //     // let ran = Math.round(Math.random()*5);
+        //     // let ran = Math.floor(Math.random()*6);
+        //     // let ran = Math.ceil(Math.random()*6) - 1;
+        //     // let ran = Math.trunc(Math.random()*6 );
+        //     // 11 - 20 
+        //     // let ran = Math.round(Math.random()*9 + 11);
+        //     // let ran = Math.floor(Math.random()*10 + 11);
+        //     // let ran = Math.ceil(Math.random()*10 + 11) -1 ;
+        //     let ran = Math.trunc(Math.random()*10 + 11);
+        //     console.log(ran);
+        // }
 
-        console.log(Math.PI);
-        console.log(result);
+        // console.log(Math.PI);
+        // console.log(result);
+        
+        //11-20//设扩大x倍加y，得方程 ：y = 11；x + y = 20
+        // for(let i = 0 ; i < 50 ; i++) {
+        //     // let num = Math.floor((Math.random()*9 + 12)) ;//由于向下取整，无法取到20，不妨设取到21，就可以取20
+        //     // let num = Math.ceil((Math.random()*10 + 10)) ;//由于向上取整，无法取到11，不妨设范围为10~20，就可以取11
+        //     // let num = Math.round((Math.random()*9 + 11)) ;//由于向上取整，无法取到11，不妨设范围为10~20，就可以取11
+        //     let num = Math.trunc((Math.random()*10 + 11)) ;//由于直接截断小数，无法取到20.不妨范围扩大到21，解方程0~1到11~21
+
+        //     console.log(num);
+        // }
+
+
+        //猜数
+        let num = Math.round(Math.random()*100);
+        let count = 1;
+        alert('猜数游戏开始喽！')
+        while(1) {
+            let i = +prompt("请输入你要猜的数字:");
+            if(i < num) {
+                alert('猜小啦，再猜大点吧！');
+                count++;
+            }
+            else if (i > num){
+                alert("猜大啦，再猜小点吧！");
+                count++;
+            }
+            else {
+                alert(`猜对了！恭喜你,只用了${count}次`);
+                break;
+            }
+        }
     </script>
 </head>
 <body>

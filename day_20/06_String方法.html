@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String方法</title>
+    <script>
+        /* 
+            字符串 ：
+                本质上就是一个字符数组 Hello = [H,e,l,l,o] (一旦创建，不能更改)
+
+                属性和方法 ：(都不会改变原字符串)
+                    length 字符串长度(不能修改)
+                    [索引] ：获取指定位置字符
+
+                    at() : 返回指定索引上的字符（正前负后）
+                    chatAt() :  返回指定索引上的字符,不能为负数
+                    concat() :用于连接两个或多个字符串
+                    includes() : 用于检查字符串中是否含有某个内容
+                                两个参数，一个是查询字符串，第二个是查询起始位置
+                    indexOf() ： 前往后
+                    lastIndexOf() : 从后往前
+                            查询一个字符串中是否有某个字符串，有返回索引，没有返回-1
+                            两个参数，一个是查询字符串，第二个是查询起始位置
+                            
+                    startsWith() : 检查一个字符串是否以某个内容开始        
+                    endsWith() : 检查一个字符串是否以某个内容结束
+
+                    padStart() 前补
+                    padEnd() 后补
+                        将一个字符串使用指定的内容补充到一个指定长度
+                        两个参数 ：第一个是想要的字符串长度（如果低于实际长度不会补充），第二个是不够时使用什么来进行补位
+                    
+                    repeat() ：将一个字符串重复指定次数
+
+                    replace() : 将字符串中的某个部分进行替换成指定字符串（只会替换最前面的）参数 ：替换内容  指定内容
+                    repalceAll() : 将字符串中的某个部分全部进行替换成指定字符串
+
+                    slice() 
+                    substring() 
+                        都是截取字符串的部分，两个参数 ：起始位置和结束位置(不包括结束位置)
+                        substring会自动调整两个参数位置（当结束位置小于起始位置）
+
+                    split() 
+                        根据你指定的内容对字符串进行拆分，然后返回一个数组，存放拆分好的字符
+                        
+                    toLowerCase() : 字符串大写字母转小写
+                    toUpperCase() ：字符串小写字母转大写
+
+                    trim() 所有
+                    trimStart() 前面
+                    trimEnd() 后面
+                        裁剪一定字符串的前后空格
+        */
+        let str = 'hello';
+        let result = str.length;
+        result = str.at(-6);
+        result = str.charAt(5);
+        result = str.concat(',','thanks');
+        result = result.includes("thank");//true
+        result = str.indexOf("l");
+        result = str.lastIndexOf("l");
+        result = str.startsWith('h');
+        result = str.endsWith('o');
+        str = "100";
+        result = str.padStart(7,0);
+        result = str.padEnd(7,0);
+        result = str.repeat(3);
+        str = 'hi hi hi what are you doing';
+        result = str.replace('hi','stop');
+        result = str.replaceAll('hi','stop');
+        let a="feqwfio123 地我也很烦i五点钱还我复古红第五行和我火凤凰未发货会哦晚饭等我io话费呗u我i刚吃饱3台12"
+        console.log(a.replaceAll(/1|2|3/g,"*"));
+
+        result = str.slice(9,12);
+        result = str.substring(13,9);
+
+        str = '123.345.456.567'
+        result = str.split('.');
+
+        str = 'abcdABCD';
+        result = str.toLowerCase();
+        result = str.toUpperCase();
+
+
+        str = '   ab c   '
+        result = str.trim();
+        result = str.trimEnd();
+        result = str.trimStart();
+
+        console.log(result);
+
+        // for(let i of str) {
+        //     console.log(i);
+        // }
+
+
+        //at实现 
+        // let str1 = 'hello';
+        // function myAt(string,i) {
+        //     if(i >= 0) {
+        //         return string[i];
+        //     }
+        //     else 
+        //         return string[string.length + i];
+        // }
+        // console.log(myAt(str,0));
+        // console.log(myAt(str,1));
+        // console.log(myAt(str,2));
+        // console.log(myAt(str,3));
+        // console.log(myAt(str,4));
+        // console.log(myAt(str,-1));
+        // console.log(myAt(str,-2));
+        // console.log(myAt(str,-3));
+        // console.log(myAt(str,-4));
+        // console.log(myAt(str,-0));
+        // console.log(myAt(str,5));
+
+
+        // //concat实现
+        // function myConcat(str,...str1) {
+        //     let str2 = str;
+        //     for(let i of str1) {
+        //         str2 += i;
+        //     }
+        //     return str2 ;
+        // }
+        // result = myConcat(str,' hi',' how',' are',' you');
+        // result = myConcat(str,'1')
+        // console.log(result);
+
+        //includes实现 
+        // debugger
+        let str2 = 'how are you '
+        function myIncludes(str1,str2,num) {
+            if(str2 === '') {
+                return true;
+            }
+            for(let i = num;i < str1.length; i++) {
+                let sum = 0 ;
+                // let tempt = i;
+                for(let j = 0 ;j < str2.length ;j++) {
+                    if((i + j  >= str1.length) || (str1[i + j] !== str2[j])) {//通过i + j 来实现逐步往下比较,通过i + j  >= str1.length来判断是否后面字符比较越界
+                        sum = 1;
+                        break;
+                    }
+                }
+                if(sum === 0) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        console.log(myIncludes(str2,'ow ',1));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
