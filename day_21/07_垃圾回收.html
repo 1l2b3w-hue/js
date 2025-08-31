@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>垃圾回收</title>
+    <script>
+        /* 
+            垃圾回收（GC garbage collection）
+                程序在执行一段时间后，会产生一些垃圾
+                如果一个对象没有任何变量对其引用，则这个对象称为垃圾（访问不到了，但还存在）
+                垃圾对象的存在，就会严重影响程序性能
+            JS中有自动垃圾对象回收机制，垃圾对象会被解释器自动回收
+            针对于垃圾回收，能做的是将不在使用的变量设置为null，让JS自动来清楚垃圾
+        */
+        let obj = {name : '孙悟空'}; //此时此刻，这个对象不是垃圾
+        obj = null ; //obj指向了别的地方，而此时，上面创建的对象就成为了一个垃圾
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

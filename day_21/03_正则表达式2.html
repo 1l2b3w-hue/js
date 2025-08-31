@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达时——量词</title>
+    <script>
+        /* 
+            量词
+                只会对前面的字符起作用
+                {m} : 正好有m个连续的a
+                {m,} :至少m个
+                {m,n} : 至少m个，最多n个
+                m+ : 至少一个m
+                m* : 有没有都可以 0~n；
+                m? : 0-1个m
+        */ 
+        let reg = /a{3}/; //表示匹配连续三个a
+        reg = /^a{3}$/;
+        reg = /^(ab){3}$/;//只对量词前生效
+        reg = /^ba+$/;
+        reg = /^ba*$/;
+        reg = /^ba?$/
+
+        let result = reg.test('b');
+
+
+        console.log(result);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

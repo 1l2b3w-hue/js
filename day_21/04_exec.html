@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exec</title>
+    <script>
+        /* 
+            exec():
+                用来获取字符串中，符号正则表达式的内容
+                返回一个数组，第一个存放符合正则表达式的内容，第二个存放分组的内容（如果有的话）,第三个部分存放所在索引
+
+            匹配模式 ： g ：全局匹配
+            正则表达式 ： 通过括号来进行分组（可以嵌套，嵌套时，优先最外层）
+
+        */
+        let str = 'abcadfadcadhglaaecfgs';
+        //提取axc字符串
+        let reg = /a([a-z]?)c/g;
+        let arr = [];
+        let result = reg.exec(str) ;
+        while(result != null) {
+            arr.push(result[0]);
+            console.log(result[1]);
+            result = reg.exec(str);
+        }
+        console.log(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+    <script>
+        /* 
+            1.在正则表达式中，大部分字符可以直接写
+            2. | ：或者
+            3. [] : 或，里面填写字符集,只要包含了里面的字符就行
+                [a-z] : 小写字母
+                [A-Z] : 小写字母
+                [a-zA-Z] : 任意的字母
+            4.[^] : 表示匹配除了...外的所有字符
+            5. . : 表示匹配除了换行符以外的所有字符('\n','\r')
+            6.在正则表达式中，会使用\作为转义字符
+            7.其他字符集
+                \w : 任意单词字符 匹配[a-zA-Z0-9_]
+                \W : 非单词字符 匹配[^a-zA-Z0-9_]
+                \d ： 匹配一个数字
+                \D ： 匹配一个非数字
+                \s : 匹配一个空白符
+                \S : 匹配一个非空白符
+                \b : 单词边界
+                \B ：非单词边界
+            8.开头结尾
+                ^ : 开头
+                $ ： 结尾
+        */
+        let re = /ab/;//检查是否有ab
+        re  = /a|b/;//检查是否有a或b
+        re = /abc|bcd/;//这里是整体或
+        re =/[a-z]/;
+        re =/[A-Z]/;
+        re =/[A-Za-z]/;
+        re = /[a-z]/i;//整体忽略大小写
+        re = /[^a-z]/;
+        re = /./
+        re = /\./
+        re = /\w/;
+        re = /^a/;//开头为a
+        re = /a$/;//结尾为a
+        re = /^a$/;//开头结尾都是同一个a（完全匹配 ： 要求字符串必须与正则表达式一样）
+        re = /^abc$/
+        
+
+        let result = re.test("abcabc");
+
+
+        console.log(result);
+
+        // let num = 17;
+        // let arr = [];
+        // while (num != 0 && num >0 ) {
+        //     arr.push(num % 16);
+        //     num = Math.floor(num /16);
+
+        // }
+        // for (let i = arr.length - 1; i >= 0; i--) {
+        //     // console.log(arr);
+        //     switch (arr[i]) {
+        //         case 10: console.log('A');
+        //             break;
+        //         case 11: console.log('B');
+        //             break;
+        //         case 12: console.log('C');
+        //             break;
+        //         case 13: console.log('D');
+        //             break;
+        //         case 14: console.log('E');
+        //             break;
+        //         case 15: console.log('F');
+        //             break;
+        //         default : console.log(arr[i]);
+        //     }
+        // }
+
+    //   function fn(OHX,num) {
+    //     if(num === 0) {
+    //         return 0;
+    //     }
+    //     let arr = [];
+    //     while (num != 0 && num > 0) {
+    //         arr.push(num % OHX);
+    //         num = Math.floor(num / OHX);
+
+    //     }
+    //     let sum = '';
+    //     for (let i = arr.length - 1; i >= 0; i--) {
+    //         // console.log(arr);
+    //         if(OHX > 10 && OHX < 17) {
+    //             switch (arr[i]) {
+    //             case 10: sum += "A";
+    //                 break;
+    //             case 11: sum += "B";
+    //                 break;
+    //             case 12:sum += "C";
+    //                 break;
+    //             case 13: sum += "D";
+    //                 break;
+    //             case 14: sum += "E";
+    //                 break;
+    //             case 15: sum += "F";
+    //                 break;
+    //             default:sum += arr[i];
+    //         }
+
+    //         }
+    //         else {
+    //             sum += arr[i];
+    //         }
+            
+    //     }
+    //     return sum;
+    //   }
+    //   let result =fn(2,16749);
+    //   console.log(result);
+
+    // console.log(Number('0X'+ 12));
+    // let num = 20;
+    // console.log(num.toString(2));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

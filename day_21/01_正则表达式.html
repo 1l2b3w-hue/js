@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+    <script>
+        /* 
+            正则表达式 ：（也是一个对象，要使用时必须先创建这个表达式）
+                定义的一个字符串规则
+                计算机可以通过正则表式来判断一个字符串符不符合这个规则或者从字符串中提取符合这个规则的内容
+            
+            构造函数(RegExp)创建,构造函数可以有两个参数（字符串），第一个就是正则表达式，第二个是匹配模式 (可以动态传递正则表达式)
+            字面量创建 ： /正则表达式/匹配模式
+
+            test() :
+                一个实例方法，由于检查一个字符串符不符合实例的正则表达式要求
+        */
+        let reg = new RegExp('a','i');
+        reg = new RegExp('\a','i');//会等价于/a/i(将会把\当做转移字符而省略)
+        reg = new RegExp('\\a','i');//等价与/\a/i
+        console.log(reg,typeof reg);
+        let reg2 = /a/i; //检查一个字符串是否符合含有a字符
+        console.log(reg2);
+
+        let str = 'bc';
+
+        let result = reg2.test(str);//通过使用reg2的正则表达式来检查str是不是符合这个表达式
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

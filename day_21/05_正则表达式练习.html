@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <script>
+        /* 
+            书写正则表达式时，应该先表述出自己的语言
+            手机号规则 ：
+            第一位为1，第二位不能为0，1，2;后面数字无要求
+
+        */
+        let str = 'asdfhaha17346929963ahjkldfhakjbcla15172746763dageruofasc15827907826afglajhf12301234567891';
+        let reg = /(1[3-9]\d)\d{4}(\d{4})/g;//进行分组
+        let result = reg.exec(str);
+        while(result) {
+            // console.log(result[0]);
+            console.log(result[1] + '****' + result[2]);//进行拼串
+            result = reg.exec(str);
+           
+        }
+
+        // let reg = /1[3-9][0-9]{9}/g;
+        // let arr = [];
+        // let result = reg.exec(str);
+        // while(result) {
+        //     arr.push(result[0]);
+        //     result = reg.exec(str);
+        // }
+        // console.log(arr);
+        // for(let i of arr) {
+        //    console.log( i.replace(i.slice(3,7),"****"));
+        // }
+        reg = /^(1[3-9]\d)\d{4}(\d{4})$/;//检查一个是不是手机号，应该采用完全匹配来规定好整个字符串
+        result = reg.test('12334579799');
+        console.log(result);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

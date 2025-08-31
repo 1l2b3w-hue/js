@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串方法正则</title>
+    <script>
+        /* 
+            split() :
+                可以通过正则表达式来进行拆分一个字符串
+
+            search() :
+                查找符合正则表达式的内容或指定内容第一次出现的索引 
+
+            replace() :
+                替换符合正则表达式的内容
+            
+            match() :
+                匹配符合正则表达式要求的内容，并将所有符合要求的内容以数组形式输出 （跟exec差不多，但是并不会对分组部分进行多次取出，是整体取出）
+
+            matchAll ：
+                 匹配符合正则表达式要求的内容，必须要求加g。返回一个迭代器(通过遍历来查询存放内容)
+        */
+        let str = 'a1b1c1d';
+        str = 'a123b143c153d';
+        str = 'asdfhaha17346929963ahjkldfhakjbcla15172746763dageruofasc15827907826afglajhf12301234567891';
+
+        let result = str.split('1');
+        // let reg = /1\d3/;
+        // result = str.split(reg);
+        result = str.split(/1\d3/);
+        // result = str.search(/1\d3/); 
+        result = str.search(123); 
+        result = str.replace(/1[3-9]\d\d{8}/g,'Phone Number');
+        result = str.match(/1[3-9]\d\d{8}/g);
+        result = str.matchAll(/1[3-9]\d\d{8}/g);//必须要求加g
+
+        for(let i of result) {
+            console.log(i);
+        }
+
+
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
