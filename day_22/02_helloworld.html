@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>helloworld</title>
+</head>
+<body>
+    <button id = 'btn'>点我</button>
+
+
+
+    <script>
+        /* 
+            使用DOM来操作网页，需要先拿到一个对象,才能完成各种操作
+            浏览器为我们提供了一个doucment对象，表示整个网页，可以通过document来获取网页中的所有对象
+            document是一个全局变量（在window中），可以直接使用
+        */
+        // document.write('123');
+        // console.log()
+        const btn = document.getElementById("btn"); //通过id来获取对象
+        console.log(btn);
+        btn.innerText = 'Click Me';
+    </script>
+</body>
+</html>

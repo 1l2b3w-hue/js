@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="#">1</a>
+    <div id = 'box1'>
+        box1  
+        <span class="s1">span1</span><span class="s1">span1</span>
+    </div>
+    <span class="s1">span1</span>
+
+
+
+    <script>
+        /* 
+            某个标签的原型链 ：
+                某个标签 ——>HTML标签名Element——>HTMLElement——>Element——>Node——>EvenTarget——>Object——>null
+
+            通过元素节点对象来获取其他节点的方法
+                element.childNodes : 获取当前元素的子节点 （会包含空白的子节点）
+                element.children : 获取当前元素的子元素
+                element.firstChild : 获取当前元素的第一个子节点
+                element.firsrElementChild : 获取当前元素的第一个子元素
+                element.lastElementChild : 获取当前元素的最后一个子元素
+                element.nextSibling : 获取当前元素的下一个兄弟节点
+                element.nextElementSibling : 获取当前元素下一个兄弟元素的节点
+                element.previousElementSibling : 获取当前元素上一个兄弟元素的节点
+                element.parentNode : 获取当前元素的父节点
+                element.parentElement : 获取当前元素的父元素
+                element.tagName : 获取当前元素的标签名
+
+
+        */ 
+        
+        const box1 = document.getElementById("box1");
+        console.log(box1);
+        // const span1 = document.getElementsByClassName("s1");
+        // const span1 = document.querySelectorAll("span");
+        // const span1 = document.getElementsByTagName("span");
+        // const span1 = box1.getElementsByTagName("span");//查找box1元素节点对象中的元素节点
+        // const span1 = box1.getElementsByClassName("s1");
+        // console.log(span1);
+        let  count = box1.childNodes;//box1 span span 一个空白换行节点
+        count = box1.children;
+        count = box1.firstChild;
+        count = box1.firstElementChild;
+        count = box1.lastElementChild;
+        count = box1.nextSibling;
+        count = box1.nextElementSibling;
+        count = box1.previousElementSibling;
+        count = box1.parentNode;
+        count = box1.parentElement;
+        count = box1.tagName;
+
+        console.log(count);
+
+
+
+
+
+
+
+
+        // console.log(box1.__proto__ === HTMLDivElement.prototype);
+        // console.log(box1.__proto__.__proto__ === HTMLElement.prototype);
+        // console.log(box1.__proto__.__proto__.__proto__ === Element.prototype);
+        // console.log(box1.__proto__.__proto__.__proto__.__proto__ === Node.prototype);
+        // console.log(box1.__proto__.__proto__.__proto__.__proto__.__proto__ === EventTarget.prototype);
+        // console.log(box1.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__ === Object.prototype);
+
+
+
+
+
+
+        // 两位数彩票
+        // let ran = Math.floor(Math.random() * 100);
+        // ran = String(ran).padStart(2, 0);
+        // let ticket = prompt("买定离手，想买哪个数吗（0~99）：");
+        // let reg = /^\d?\d$/
+
+        // if (!reg.test(ticket)) {
+        //     alert("客官，这可不行哦，不要乱来");
+        // }
+        // else {
+        //     ticket = ticket.padStart(2, 0);
+        //     if (ticket === ran) {
+        //         alert("哎吆喂，客官中大奖了，恭喜恭喜，奖金1000元");
+        //     }
+        //     else if (ticket[1] === ran[0] && ticket[0] === ran[1]) {
+        //         alert("哎呀，恭喜客官中奖了，奖金100元");
+        //     }
+        //     else if (ticket[1] === ran[1] || ticket[0] === ran[0]) {
+        //         alert("恭喜客官中奖，奖金10块，嘿嘿，虽然少，但还不是中奖了吗");
+        //     }
+        //     else {
+        //         alert("这次运气不好，客官下次再来玩！");
+        //     }
+        // }
+        // alert(`中奖号码揭秘咯!号码是 ： ${ran}`);
+
+    </script>
+</body>
+
+</html>

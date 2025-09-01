@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素节点</title>
+</head>
+<body>
+    <button id="btn">点我</button>
+    <h1 class = 'text'>123</h1>
+    <p class = 'text'>234</p>
+    <span>123</span>
+    <span>123</span>
+    <span>123</span>
+    <span>123</span>
+    <span>123</span>
+    <form action="#">
+        <input type="radio" name = 'gender'>男
+        <input type="radio" name = 'gender'>女
+
+    </form>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+
+
+    <script>
+        /* 
+            元素节点(element) 
+                在一个网页中，每一个标签都是一个元素节点
+
+                如何获取一个元素节点
+                    1.通过document对象来获取元素节点
+                        通过document来获取已有元素节点
+                            1.document.getElementById() : 根据id名获取一个元素节点对象
+                            2.document.getElementsByClassName() ： 根据class名来获取相同类名的元素节点对象 （返回一个类数组对象，不能调用数组方法）
+                                返回的是一个实时更新的集合，但网页中相关元素数量发生变化时，也会产生相应变化
+                            3.document.getElementsByTagName() : 根据标签来获取一组相关标签的元素节点对象，跟className一样，实时更新的集合
+                            4.document.getElementsByName() : 根据name属性来获取一组相关name属性标签的元素节点，跟ClassName一样，实时更新的集合。主要使用与表单项
+                                即使只会查到一个元素节点，但还是会返回一组集合
+                            5.querySelectorAll() : 根据选择器来获取一组被选择器选中的标签的元素节点，但并不会进行一个实时更新。一定会返回一个类数组
+                            6.querySelector() : 只会返回被选择器选中的第一个标签的元素节点
+                    2.通过document对象来创建元素节点
+                        document.createElement() : 创建一个指定的标签元素节点,需要注意的是，并不会插入到页面中
+
+        */
+        const btn = document.getElementById('btn');
+        console.log(btn);
+        const text = document.getElementsByClassName('text');
+        console.log(text);
+        // for(let i of text) {
+        //     // alert(i);
+        //     i.innerText = '哈哈';
+        // }
+        const spans = document.getElementsByTagName("span");
+        console.log(spans);
+        const name = document.getElementsByName('gender');
+        console.log(name);
+        const s2 =  document.querySelectorAll("div");
+        console.log(s2);
+        const div2 = document.querySelector('div');
+        console.log(div2);
+        const p = document.createElement('p');
+        p.innerText = "你好,DOM";
+        console.log(p);
+
+    </script>
+
+</body>
+</html>

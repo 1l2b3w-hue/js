@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document对象</title>
+</head>
+<body>
+    <a href="#">1</a>
+    <a href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+
+
+    <script>
+        /* 
+            doucment对象
+                代表着整个网页
+                原型链
+                    document ——> HTMLDocument ——> Document ——> Node ——> EventTarget ——> Object ——> null
+                    凡是在原型链上出现的对象中的属性和方法，都可以通过Document来进行调用
+
+                document.documentElement : 获取html根元素 
+                document.head  ： 获取头部元素
+                document.title  ： 获取标题 
+                document.body  ： 获取body元素 
+                document.links  ： 获取所以超链接标签 
+        */
+
+        console.log(document.body);
+        console.log(document.head);
+        console.log(document.title);
+        console.log(document.links);
+        console.log(document.documentElement);
+
+
+
+
+
+
+
+
+        // console.log(document.__proto__ === HTMLDocument.prototype);
+        // console.log(document.__proto__.__proto__ === Document.prototype );
+        // console.log(document.__proto__.__proto__.__proto__ === Node.prototype );
+        // console.log(document.__proto__.__proto__.__proto__.__proto__ === EventTarget.prototype);
+        // console.log(document.__proto__.__proto__.__proto__.__proto__.__proto__ === Object.prototype);
+        // console.log(document.__proto__.__proto__.__proto__.__proto__.__proto__.__proto__ );
+
+
+    </script>
+</body>
+</html>
