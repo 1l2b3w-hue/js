@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性节点</title>
+</head>
+<body>
+    <input   class="a" type="text" name = "username" value="admin">
+
+
+    <script>
+        /* 
+            属性节点 ：
+                在DOM中，属性节点也是一个对象，通常采用元素来对其完成各种操作
+
+                操作属性节点
+                    方法1 ： 
+                        读取 : 元素.属性名 （对于读取class属性，应该通过className来获取）
+                            在读取布尔值类型的属性时（disabled）返回一个true或false并不会返回内容
+                        修改
+
+                    方法2 ：
+                        读取 ：元素.getAttribute(属性名) （读取class属性时，不使用className）
+
+                        修改 ： 元素.setAttribute(属性名，属性值) 
+                            改的比较直接，不管要修改的属性是啥，就把属性值当字符串传过去就行，
+
+                        删除 ： 元素.removeAttribute(属性名)
+        */  
+
+
+        let input1 = document.getElementsByTagName("input")[0]; //直接通过索引获取指定标签
+        input1 = document.querySelector("input");
+        let result = input1.getAttribute("class");
+        result = input1.getAttribute("type");
+        result = input1.getAttribute("name");
+        result = input1.getAttribute("value");
+        input1.setAttribute("class", 'b');
+        input1.setAttribute("type", 'password');
+        input1.setAttribute("name", "username");
+        input1.setAttribute("value", 'apt');
+
+       input1.disabled= false; //一个不会添加disabled属性
+       input1.setAttribute('disabled' , false) //会添加disabled，并将值改为false 。因此为符合规范，设置布尔值时，要确保名值一样
+       
+       input1.removeAttribute("disabled");
+       
+       
+       
+       
+       
+       
+       
+        // let result = input1.type;
+        // result = input1.name;
+        // result = input1.value;
+        // result = input1.class;//undefined
+        // result = input1.className;
+        // result = input1.disabled;
+        // input1.className = 'ab';
+        // input1.type = "password";
+        // input1.name = "password";
+        // input1.value = "pas";
+        // result = input1.value;
+
+        console.log(input1); 
+        console.log(result);
+    </script>
+</body>
+</html>

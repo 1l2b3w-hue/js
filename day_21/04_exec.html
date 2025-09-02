@@ -19,6 +19,11 @@
         let reg = /a([a-z]?)c/g;
         let arr = [];
         let result = reg.exec(str) ;
+        console.log(result);
+        result = reg.exec(str);
+        console.log(result);
+        result = reg.exec(str) 
+        console.log(result);
         while(result != null) {
             arr.push(result[0]);
             console.log(result[1]);

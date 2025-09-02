@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档加载</title>
+    <script defer src="./script/script.js"></script> 
+    <script>
+        /* 
+            网页是从上往下执行的，如果将script 中的js代码放在上面，会先执行js代码，但此时有获取了还并没有创建的button的DOM对象自然要报错
+
+            window.onload ：一个事件，会在浏览器加载完成后(所有文档)，才会触发这个事件
+            document的DOMContentLoaded事件会在当前页面文档加载完成后，就会触发
+
+            解决 ：
+                将script写在body最后面，（写外面也行，但不符合语法规范，因为html的子元素就两个：head、body。写外面浏览器也会将其放进去，没必要）
+                将代码编写到window.onload的回调函数中
+                将代码写在document对象的DOMContentLoaded的回调函数中 （比上面更加有优势）
+                将代码写在js文件中，然后使用defer来进行引用 defer : 延迟加载js代码，但执行时间早与DOM
+        */
+        // window.onload = function() {
+        //        const btn = document.getElementById("btn");
+        // btn.addEventListener("click" , function() {
+        //     alert(123);
+        // })
+        // console.log(btn);
+        // }
+
+        // window.addEventListener('load', function () {
+        //     const btn = document.getElementById("btn");
+        //     btn.addEventListener("click", function () {
+        //         alert(123);
+        //     })
+        //    alert(btn);
+        // })
+
+        // document.addEventListener("DOMContentLoaded", function () {
+
+        //     const btn = document.getElementById("btn");
+        //     btn.addEventListener("click", function () {
+        //         alert(123);
+        //     })
+        //    alert(btn);
+        // })
+
+     </script>
+</head>
+
+<body>
+    <button id="btn">点我</button>
+    <iframe src="https://douyin.com" frameborder="0"></iframe>
+    <!-- 
+    <script>
+        /* 
+        
+        */
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click" , function() {
+            alert(123);
+        })
+        console.log(btn); -->
+
+    </script>
+</body>
+
+</html>

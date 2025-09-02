@@ -1669,15 +1669,178 @@ includes() : 检查一个字符串从指定位置开始是否含有指定字符�
 返回一个字符串中，指定字符内容在该字符串中的索引，没有返回-1
 indexOf() ：从前开始找第一次出现的索引
 indexLastOf() ： 从后开始找最后一次出现的索引
+search() :
+	查找符合正则表达式的内容或指定内容第一次出现的索引 
 
 检查一个字符串的开头和结束是否符合某个内容
 startWith() ： 检查开头
 endWith() : 检查结尾
+
+将一段字符串使用指定字符扩展到指定位数，如果指定位数 < 原有长度不进行扩展。两个参数 ： 位数 填充内容
+padStart() ： 从前开始
+padEnd() ： 从后开始
+
+repeat() : 将字符串重复n次
+
+replace() : 将字符串中的指定部分（最前面的指定部分,可以通过正则来查找）替换成指定内容。 两个参数 ： 想替换的部分  指定内容
+replaceAll() ： 将字符串中的全部指定部分替换成指定内容
+
+
+slice() 
+substring() 
+    都是截取字符串的部分，两个参数 ：起始位置和结束位置(不包括结束位置)
+    substring会自动调整两个参数位置（当结束位置小于起始位置）
+
+split() : 根据你提供的内容（可以是正则表达式）来分割原字符串并存放到新数组
+
+toLoerCase() : 大写字母转小写 
+toUpperCase() ：小写字母转大写
+
+消除字符串前后空格 ：
+trim()
+trimStart()
+trimEnd()
+
+match() :
+	匹配符合正则表达式要求的内容，并将所有符合要求的内容以数组形式输出 （跟exec差不多，但是并不会对分组部分进行多次取出，是整体取出）
+
+matchAll() ：
+	匹配符合正则表达式要求的内容，必须要求加g。返回一个迭代器(通过遍历来查询存放内容)
 ```
 
 ## 正则表达式
 
+​	定义一个字符串的规则，是一个对象，必须先创建		
+
+​	计算机可以通过正则表达式来检查或提取某一字符串中是否符合这个规则
+
+```
+定义
+new RegExp(正则表达式，匹配规则)
+/正则表达式/匹配规则
+
+匹配规则 ：
+i : 是否区分大小写
+g : 是否全局匹配
+
+实例方法
+test() : 验证某个字符串是否符合该正则表达式
+exec() : 提取某个字符串中符合正则表达式的内容
+	返回一个数组，第一个存放符合最先匹配正则表达式的内容，第二个存放分组的内容（如果有的话）,第三个部分存放所在索引
+	连续调用会不断往后进行匹配，知道返回null
+
+1.在正则表达式中，大部分字符可以直接写
+2. | ：或者
+3. [] : 或，里面填写字符集,只要包含了里面的字符就行
+    [a-z] : 小写字母
+    [A-Z] : 小写字母
+    [a-zA-Z] : 任意的字母
+4.[^] : 表示匹配除了...外的所有字符
+5. . : 表示匹配除了换行符以外的所有字符('\n','\r')
+6.在正则表达式中，会使用\作为转义字符
+7.其他字符集
+    \w : 任意单词字符 匹配[a-zA-Z0-9_]
+    \W : 非单词字符 匹配[^a-zA-Z0-9_]
+    \d ： 匹配一个数字
+    \D ： 匹配一个非数字
+    \s : 匹配一个空白符
+    \S : 匹配一个非空白符
+    \b : 单词边界
+    \B ：非单词边界
+8.开头结尾
+    ^ : 开头
+    $ ： 结尾
+ 
+量词 ：
+    只会对前面的字符起作用
+    {m} : 正好有m个连续的a
+    {m,} :至少m个
+    {m,n} : 至少m个，最多n个
+    m+ : 至少一个m
+    m* : 有没有都可以 0~n；
+    m? : 0-1个m
+```
+
+
+
+## DOM
+
+​	是Web API 的一部分，DOM(Document Object Model) (网页，对象，模型)
+
+​	将网页中所有的内容都转换为对象，模型来表示对象之间的关系
+
+​	每个对象都被成为节点，一个网页由多个节点构成，主要分文档节点、元素节点（标签）、文本节点（文字、空白符...）、属性节点(标签属性)
+
 ​	
+
+​	使用DOM来操作网页，需要先拿到一个对象,才能完成各种操作
+
+​	浏览器为我们提供了一个doucment对象，表示整个网页，可以通过document来获取网页中的所有对象
+
+​	document是一个全局变量（在window中），可以直接使用
+
+​	
+
+```
+doucment对象
+	代表着整个网页
+	原型链
+	document ——> HTMLDocument ——> Document ——> Node ——> EventTarget ——> Object ——> null
+凡是在原型链上出现的对象中的属性和方法，都可以通过Document来进行调用
+
+document.documentElement : 获取html根元素 
+document.head  ： 获取头部元素
+document.title  ： 获取标题 
+document.body  ： 获取body元素 
+document.links  ： 获取所以超链接标签 
+```
+
+
+
+```
+元素节点
+
+获取 ：
+document.getElementById() : 通过id获取一个元素节点
+document.getElementsByClassName() ： 通过class获取一组元素节点，返回一个类数组对象，会实时更新这个类数组对象
+document.getElementsByTagName() ： 通过标签名获取一组元素节点，类数组对象，实时更新
+dicument.getElementsByName() ： 通过属性的name来获取一组元素节点，类数组对象，实时更新，主要用于表单，即使只有一个也返回类数组对象
+
+querySelector() ： 获取符合选择器的第一个元素节点
+querSelectorAll() ：根据选择器获取一组符合选择器的元素节点，类数组对象，不实时更新
+
+创建 ：
+document.createElement() :创建一个指定的标签元素节点,需要注意的是，并不会插入到页面中
+```
+
+```
+标签
+某个标签的原型链 ：
+    某个标签 ——>HTML标签名Element——>HTMLElement——>Element——>Node——>EvenTarget——>Object——>null
+
+通过标签获取元素节点 
+element.childNodes : 获取当前元素的子节点 （会包含空白的子节点）
+element.children : 获取当前元素的子元素
+element.firstChild : 获取当前元素的第一个子节点
+element.firsrElementChild : 获取当前元素的第一个子元素
+element.lastElementChild : 获取当前元素的最后一个子元素
+element.nextSibling : 获取当前元素的下一个兄弟节点
+element.nextElementSibling : 获取当前元素下一个兄弟元素的节点
+element.previousElementSibling : 获取当前元素上一个兄弟元素的节点
+element.parentNode : 获取当前元素的父节点
+element.parentElement : 获取当前元素的父元素
+element.tagName : 获取当前元素的标签名
+```
+
+```
+文本节点
+获取和修改一个节点的文本内容
+element.innerText() ： 读取或修改指定元素节点的文本内容，考虑css，因为要读取css样式，会引起重排（通过css样式去调整页面），效率上比textContent低，但是可以忽略不记 。
+element.textContent() : 读取或修改指定元素节点的文本内容，不考虑css
+上面两个属性在为元素节点文本内容添加标签时，会自动转换为转义字符 ： &lt;li&gt;
+
+element.innerHTML() ： 可以直接添加标签 在使用innerHTML进行插入内容时，有被xss注入的风险
+```
 
 函数、方法：
 

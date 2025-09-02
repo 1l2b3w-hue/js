@@ -20,7 +20,10 @@
         // console.log()
         const btn = document.getElementById("btn"); //通过id来获取对象
         console.log(btn);
-        btn.innerText = 'Click Me';
+        // btn.innerText = 'Click Me';
+        btn.addEventListener("click",() => {
+            alert("Hello,World!");
+        })
     </script>
 </body>
 </html>

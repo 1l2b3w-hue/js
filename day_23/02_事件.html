@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件</title>
+</head>
+<body>
+    <!-- <button id = "btn" onmouseenter = "alert(132)">点我</button> -->
+    <button id = "btn" >点我</button>
+
+
+    <script>
+        /* 
+            事件 ：
+                用户与页面发生的交互行为
+                浏览器通过调用绑定某个事件的函数（回调函数）来完成用户与页面的交互
+
+            绑定响应函数的方法 ：
+                1.直接写在标签里面
+                2.通过为元素指定属性添加回调函数来完成事件的绑定
+                3.通过调用addEventListener()来绑定事件
+                    两个参数 ： 描述事件的字符串  函数
+
+            在事件的响应函数中，响应函数绑定的谁，函数的this就指向谁(箭头函数除外)（但不建议使用该方法）
+        */
+        const btn = document.getElementById("btn");
+        
+        // btn.onclick = function() {
+        //     alert(123);
+        // }
+        btn.ondblclick = function() {alert(123)};
+        btn.ondblclick = function() {alert(12334)};//覆盖前面
+
+
+
+
+        btn.addEventListener("click",() => {
+            alert(123);
+        })
+
+        btn.addEventListener("click", function() {
+            alert(1234);
+        }) //连续执行两次
+
+        console.log(btn);
+    </script>
+</body>
+</html>
