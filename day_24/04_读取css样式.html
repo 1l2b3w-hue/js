@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>读取css样式</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        .box1::before {
+            content: "hello";
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">点我</button>
+    <hr>
+    <div class="box1"></div>
+
+    <script>
+        /* 
+            元素节点.style.样式名 ： 读取样式时，只会读取内联样式（标签中的样式）。非常局限
+            对于读取样式表的样式，也不推荐，应该去读取生效的样式
+            所有读取样式时都是只读的，并不能进行修改
+            两种办法 ：
+                getComputeStyle() : 
+                    一个全局方法(window),传递一个元素节点，返回一个对象，里面存放该元素节点所有生效的样式。
+                    可以通过读取指定样式名的样式值 （对象.样式名） （特殊样式名为驼峰）
+                    两个参数 ： 元素节点  "要获取的伪元素"(当设置了伪元素时，会主动的读取伪元素的样式，并不会读取原来的元素节点的样式) 
+                    需要注意的是，获取的样式是带单位的（200px）一般不直接拿来计算（paresInt）
+                            样式对象返回的值在进行运算时，应该要确保这个值可以正常进行运算
+
+        */
+       /* 
+            点击按钮，读取css样式
+       */
+        const btn1 = document.getElementById("btn1");
+        const box1 = document.querySelector(".box1");
+
+        btn1.onclick = function() {
+            // box1.style.width = "300px";
+            // console.log(box1.style.width);
+            const styleObj = getComputedStyle(box1,);
+            // console.log(styleObj);
+            console.log(styleObj.backgroundColor);
+            console.log(styleObj.color);
+            console.log(styleObj.width + 100); //字符串拼串
+            console.log(parseInt(styleObj.width) + 100); //但需要注意的是这里并没有带单位，在复制该样式值时需要带上单位进行拼串
+            box1.style.width = parseInt(styleObj.width) + 100 + 'px';
+        }
+    </script>
+</body>
+
+</html>

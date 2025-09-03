@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点的复制</title>
+</head>
+<body>
+    <button id="btn1">点我</button>
+    <ul id="list1">
+        <li id="l1">孙悟空</li>
+        <li id="l2">猪八戒</li>
+        <li id="l3">沙悟净</li>
+    </ul>
+
+    <ul id="list2">
+        <li>蜘蛛精</li>
+    </ul>
+
+
+    <script>
+        /* 
+            点击按钮“点我”实现将第一个id为l1的li放入第二个ul中
+
+            节点方法 ： 
+                cloneNode() : 用于创建一个对象的复本，（复制一个），会复制一个节点的所有特点（包括id，class...），只会复制当前节点，并没有复制子节点（文本内容 ）
+                        当传递参数为true时，会复制子节点，false或不传就复制当前节点
+        */
+        const btn1 = document.getElementById("btn1");
+        const l1 = document.getElementById("l1");
+        const list2 = document.getElementById("list2");
+        
+        const newL1 = l1.cloneNode(true);
+        newL1.id = 'newl1';//避免一个页面出现重复id
+        btn1.addEventListener("click",function() {
+            list2.appendChild(newL1);
+        })
+    </script>
+</body>
+</html>

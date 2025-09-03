@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改css样式</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        .box2 {
+            width: 300px;
+            height: 500px;
+            border: 10px solid red;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">点我</button>
+    <hr>
+    <div class="box1"></div>
+
+    <script>
+        /* 
+            点击按钮，完成对box1的样式修改
+            
+
+            
+            可以通过修改class名来间接为一个元素节点添加css属性 （一个元素多个class，会采用多个样式）
+                好处 ：
+                    一次性修改多个样式
+                    可以实现js和css的一个解耦（指当要完成修改样式时，js和css都参与了样式设计，导致两者耦合度较高）
+
+            一个元素节点对象 ： classList  提供了对class的各种操作方法
+            element.classList.add("类名"...) : 为该元素增加一个或多个类名
+                对于重复的类名，并不会再次添加
+
+            element.classList.remove() : 删除该元素的一个或多个类名
+
+            element.classList.toggle() : 切换该元素的类名，如果类名以及存在，删除该类名，不存在则添加该类名
+
+            element.classList.replace(旧类，新类) ： 将该元素的一个类替换成其他类
+
+            element.classList.contains() : 检查该元素中是否含有某一个类名，有true，无false
+
+        */
+        const btn1 = document.getElementById("btn1");
+        const box1 = document.getElementsByClassName("box1")[0];
+    
+        
+        btn1.onclick = function() {
+            // box1.className = box1.className + ' box2'; 
+            // box1.classList.add("box2","box3");
+            // box1.classList.remove("box1","box3");
+            // box1.classList.toggle("box1");//以及存在，每次点击按钮都会根据box1的类名是否存在而决定是添加还是删除box1类名
+            // box1.classList.toggle("box2");
+
+            box1.classList.replace("box1","box2");
+
+            console.log(box1.classList.contains("box1"));
+            console.log(box1.classList.contains("box2"));
+
+        }
+    </script>
+</body>
+</html>

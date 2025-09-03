@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js修改css</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">点我</button>
+    <hr>
+    <div class="box1"></div>
+
+    <script>
+        /* 
+            点击按钮，完成对box1的样式修改
+            
+
+            js中修改一个样式 ： 元素节点.style.样式名 = "样式值" (相当于在标签中加新样式)
+            如果样式名中有“-”时，需要采用驼峰命名法(将-去掉，然后后面首字母大写)
+        */
+        const btn1 = document.getElementById("btn1");
+        const box1 = document.getElementsByClassName("box1")[0];
+
+        
+        btn1.onclick = function() {
+            box1.style.width = '400px';
+            box1.style.height = "400px";
+            box1.style.backgroundColor = "red";
+        }
+    </script>
+</body>
+</html>

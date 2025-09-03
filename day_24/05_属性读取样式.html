@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性读取css样式</title>
+    <style>
+        #box1 {
+            position: relative;
+            width: 2.6667rem;
+            height: 2.6667rem;
+            padding: .6667rem;
+            margin: .6667rem;
+            background-color: skyblue;
+            border: .1333rem solid red;
+            overflow: scroll;
+        }
+        #box2 {
+            position: absolute;
+            width: 5.3333rem;
+            height: 6.6667rem;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn1">点我</button>
+    <hr>
+    <div id="box1">
+        <div id="box2">
+
+        </div>
+        
+    </div>
+
+    <script>
+        /* 
+           对于设置了id的标签，浏览器会自动生成一个元素节点对象，名就是id名.但是，还是获取吧
+
+
+           都获得一个纯数字，可以直接计算，只读
+
+           element.clientHeight : 获取一个可见高度，有内容区和内边距构成
+           element.clientWidth :  获取一个可见宽度，有内容区和内边距构成
+                
+
+            element.offsetHeight :  获取一个可见高度，有内容区和内边距,边框构成
+            element.offsetWidth : 获取一个可见宽度，有内容区和内边距边框构成
+
+            element.scrollHeight : 获取一个高度（包括不可见），有内容区和内边距构成
+            element.scrollWidth :   获取一个宽度（包括不可见），有内容区和内边距构成
+
+            element.offsetParent : 获取一个定位的父元素，即找到离元素最近的开启了定位的祖先元素(绝对和相对都行)，没有就返回body
+                    
+            element.offsetTop
+            element.offsetLeft
+                获取当前元素对于定位的父元素(offsetParent)的上左偏移量
+
+            element.scrollTop
+            element.scrollLeft
+                获取垂直和水平上的滚动条的移动位置（离盒子的距离）。
+                可以修改，一般情况用于判断滚动条的位置
+        */
+ 
+        // console.log(btn1);
+        // console.log(box1);
+        const btn1 = document.getElementById("btn1");
+        const box1 = document.getElementById("box1");
+        const box2 = document.getElementById("box2");
+        btn1.onclick = function() {
+            // console.log(box1.clientHeight);
+            // console.log(box1.clientWidth);
+
+            // console.log(box1.offsetHeight);
+            // console.log(box1.offsetWidth);
+
+            // console.log(box1.scrollHeight);
+            // console.log(box1.scrollWidth);
+            
+            console.log(box2.offsetParent);
+
+            console.log(box2.offsetTop);
+            console.log(box2.offsetLeft);
+
+
+            console.log(box1.scrollTop);
+            console.log(box1.scrollLeft);
+        }
+    </script>
+</body>
+
+</html>

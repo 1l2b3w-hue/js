@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>员工练习</title>
+    <style>
+        .contain {
+            margin: 50px auto;
+            width: 300px;
+            text-align: center;
+        }
+        table{
+            width: 100%;
+        }
+        table,th,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+    <script defer src="./script/staff.js"></script>
+</head>
+<body>
+    <div class="contain">
+        <table>
+          <tbody>
+            <tr>
+                <th>姓名</th><th>邮件</th><th>薪资</th><th>操作</th>
+            </tr>
+            <tr>
+                <td>孙悟空</td><td>swk@hgs.com</td><td>10000</td><td><a href="#">删除</a></td>
+            </tr>
+            <tr>
+                <td>猪八戒</td><td>zbj@glz.com</td><td>8000</td><td><a href="#">删除</a></td>
+            </tr>
+            <tr>
+                <td>沙悟净</td><td>swj@lsh.com</td><td>6000</td><td><a href="#">删除</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="message">
+            <div>姓名<input type="text" id="name"></div>
+            <div>邮件<input type="text" id="email"></div>
+            <div>薪资<input type="text" id="allowance"></div>
+        </div>
+        <button>添加</button>
+    </div>
+</body>
+</html>
