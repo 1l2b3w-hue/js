@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素修改</title>
+</head>
+<body>
+    <!-- 点击按钮后，向ul添加一个唐僧 -->
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <hr>
+    <ul id="list">
+        <li id="swk">孙悟空</li>
+        <li id="zbj">猪八戒</li>
+        <li id="swj">沙悟净</li>
+    </ul>
+    <script>
+        /* 
+            添加两个节点方法
+                element.appendChild();
+                    在最后增加一个节点
+
+                element.insertAdjacentElement()
+
+                element.insertAdjacentHTML()
+
+            修改 ：
+                element.replaceWith()
+
+            删除 ：
+                element.remove()
+        */
+        const btn = document.getElementsByTagName("button")[0];
+        const ul = document.getElementById("list");
+
+        btn.addEventListener("click",function() {
+            //创建一个li标签
+            const li = document.createElement("li");
+            //添加文本
+            li.innerHTML = '唐僧';
+            //添加属性
+            li.id = 'ts';
+            //给一个节点添加一个子节点（最后添加）
+            // ul.appendChild(li);
+
+            //在一个节点附件前后添加一个节点，可以是兄弟节点，可以是子节点
+            //兄弟节点 ： beforebegin（前）,afterend（后） 子节点：afterbegin(前)  beforeend (后)
+            ul.insertAdjacentElement("afterend",li);
+
+            // 将会把后面的参数直接转换为html
+            ul.insertAdjacentHTML('afterend',"<li id=\"bgj\">白骨精</li>");//优先级高于insertAdjacentElement
+
+
+            console.log(li);
+        })
+
+        const btn2 = document.getElementsByTagName("button")[1];
+        btn2.addEventListener("click",function(){
+            //创建一个齐天大圣替换孙悟空
+            const li = document.createElement("li");
+            li.textContent = "齐天大圣";
+            li.id = 'qtds';
+
+            const swk = document.getElementById("swk");
+            // //将该节点替换为其他节点
+            // swk.replaceWith(li);
+            //删除该节点
+            swk.remove();
+            ul.insertAdjacentElement("afterbegin",li);
+            
+
+        })
+    </script>
+</body>
+</html>

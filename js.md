@@ -1810,7 +1810,7 @@ querySelector() ： 获取符合选择器的第一个元素节点
 querSelectorAll() ：根据选择器获取一组符合选择器的元素节点，类数组对象，不实时更新
 
 创建 ：
-document.createElement() :创建一个指定的标签元素节点,需要注意的是，并不会插入到页面中
+document.createElement('标签名') :创建一个指定的标签元素节点,需要注意的是，并不会插入到页面中
 ```
 
 ```
