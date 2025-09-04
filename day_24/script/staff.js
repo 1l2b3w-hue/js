@@ -3,23 +3,31 @@
 const link = document.links;
 
 //直接封装函数，避免不断遍历创建函数影响性能
-function del() {
-    // alert(123);
-    // console.log(this); //通过this来获取当前点击的超链接
-    const tr =  this.parentElement.parentElement;
+// function del() {
+//     // alert(123);
+//     // console.log(this); //通过this来获取当前点击的超链接
+//     const tr =  this.parentElement.parentElement;
 
-    const name = tr.firstElementChild;
-    // console.log(name);
+//     const name = tr.firstElementChild;
+//     // console.log(name);
 
-    //删除之前应该弹出提示是否删除
-    confirm(`确定要删除" ${name.textContent} "这个员工吗？`) && tr.remove();
+//     //删除之前应该弹出提示是否删除
+//     confirm(`确定要删除" ${name.textContent} "这个员工吗？`) && tr.remove();
 
-    return false;//取消了默认跳转行为
-}
-
+//     return false;//取消了默认跳转行为
+// }
+//直接委托进行删除
+document.addEventListener("click",function(event){
+    if([...link].includes(event.target)) {
+        const tr =  event.target.parentElement.parentElement;
+        const name = tr.firstElementChild;
+        confirm(`确定要删除" ${name.textContent} "这个员工吗？`) && tr.remove();
+        event.preventDefault();
+    }
+})
 
 //绑定单击事件
-for(let i = 0;i < link.length; i++) {
+// for(let i = 0;i < link.length; i++) {
     // link[i].addEventListener("click",function() {
     //     alert(123);
     //     return false;
@@ -36,8 +44,8 @@ for(let i = 0;i < link.length; i++) {
     //         无法在addEventListener中实现
     //     */
     // })
-    link[i].onclick = del; //不需要调用
-}
+//     link[i].onclick = del; //不需要调用
+// }
 
 /* 
     添加功能 ： 点击按钮添加信息
@@ -82,8 +90,8 @@ btn.onclick = function () {
     tbody.appendChild(tr);
 
 
-    const newA = link[link.length -1 ];
-    newA.onclick = del;
+    // const newA = link[link.length -1 ];
+    // newA.onclick = del;
 
     return false;//取消表单提交时默认跳转（这里我没有表达，有没有都无所谓）
 }

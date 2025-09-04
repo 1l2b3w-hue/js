@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件的冒泡</title>
+    <style>
+        #box1 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border-radius: 50%;
+        }
+        #box2 {
+            width: 300px;
+            height: 300px;
+            background-color: aqua;
+        }
+        #box3 {
+            width: 200px;
+            height: 200px;
+            background-color: aliceblue;
+        }
+        #box4 {
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3">
+        <div id="box4"></div>
+    </div>
+
+
+    <script>
+        /* 
+
+            事件的冒泡与元素的结构有关（只要使是祖先，那就会冒泡），并不与样式有关
+        */
+       //实现box1跟随鼠标移动 ， 如果没有冒泡，所有的元素都需要设置移动才能使小球跟随小球移动
+       const box1 = document.getElementById("box1");
+       document.addEventListener("mousemove",function(event) {
+            // console.log(111);
+            box1.style.top = event.clientY  + 'px';
+            box1.style.left = event.clientX + 'px';
+       });
+       const box2 = document.getElementById("box2");
+    //    box2.addEventListener("mousemove",function(event) {
+    //         // console.log(123)
+    //         event.stopPropagation();//妨碍了冒泡的传递，使鼠标在box2中的移动无法实现
+
+    //    })
+
+       const box3 =document.getElementById("box3");
+       const box4 =document.getElementById("box4");
+       box3.onclick = function(event) {alert(3);}
+       box4.onclick = function(event) {alert(4);} //很明显，事件的冒泡与元素的结构有关（只要使是祖先，那就会冒泡），并不与样式有关
+    </script>
+
+</body>
+</html>

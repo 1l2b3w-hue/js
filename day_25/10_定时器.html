@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器</title>
+
+</head>
+
+<body>
+    <h1 id="h1"></h1>
+    <script>
+        /* 
+            通过定时器，可以让代码经过一段时间后再执行
+            两种方式 ：
+                setTimeout() : 会返回一个定时器编号  只会执行一次
+                    参数 ： 
+                        1. 一个回调函数，里面存放要执行的代码
+                        2. 时间，单位毫秒
+                        关闭定时器 ： clearTimeout(定时器编号)
+                
+                setInterval() : 每个一个指定时间执行一次
+                    參數一致
+                        关闭定时器 ： clearInterval(...)
+        */
+        const h1 = document.getElementById("h1");
+        let num = 10;
+        const time3 = setInterval(function(){
+            num--;
+            h1.textContent = num;
+            if(num === 0) {
+            alert("时间结束");
+            h1.textContent = '';
+            clearInterval(time3);
+        }
+
+
+        },1000);
+
+    
+
+
+
+
+
+        const time1 = setTimeout(function () {
+            alert("定时器");
+        }, 1000);
+        clearTimeout(time1);
+
+
+        const time2 = setInterval(function () {
+            console.log(123);
+        }, 1000); 
+        clearInterval(time2);
+    </script>
+</body>
+
+</html>

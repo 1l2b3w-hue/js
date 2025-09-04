@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件循环</title>
+
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <button id="btn2">点我一下1</button>
+
+    <script>
+        /* 
+            事件循环（event loop）
+                JS将会检查调用栈中的内容，并执行其中的内容，执行完后将会从消息队列中拿出回调函数到栈区进行调用，然后执行完后继续检查消息队列中的内容不断重复
+                直到消息队列和调用栈中没有内容
+
+                每次调用函数时，都会为函数创建一个执行环境
+                这个执行环境存放函数执行产生的一切数据
+                函数执行环境会存放到调用堆栈（调用栈）
+
+            栈 ： 一种数据结构
+                可以存放一组数据，存放和取出都有顺序，会后进先出
+            
+            调用栈 ： 
+                存放函数执行环境
+                每次调用函数时，会将函数的执行环境作为一个栈帧插入到栈顶中，当函数执行完毕后，该函数的栈帧会自动从栈中弹出
+
+            消息队列
+                用于存放将要执行的函数
+                当触发了一个事件后，并不会立即将事件的回调函数插入调用栈，因为此时调用栈中可能存在一些并没有执行完的内容。会将事件的回调函数插入消息队列
+                当调用栈中存放的内容执行完毕后，调出消息队列中的回调函数执行
+
+            队列 ：一种数据结构 特点 ：先进先出
+        */
+        function fn() {
+            
+            function fn2() {
+                console.log(2);
+            }
+            fn2();
+            console.log(1);
+        }
+        fn();
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click",function() {
+            alert(111);
+            let date =Date.now() ;
+            console.log(date);
+            while(Date.now() - date < 3000) {
+                //强行让回调函数占据3秒
+            }
+        })
+        const btn2 = document.getElementById("btn2");
+        btn2.addEventListener("click",function() {
+            alert(123);//发现点击完按钮后并不能马上弹出123，因为第一个按钮的点击事件还占据着调用栈
+        })
+    </script>
+</body>
+</html>

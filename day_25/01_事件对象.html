@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件对象</title>
+    <style>
+        #box1 {
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            border: 10px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+
+    <script>
+        /* 
+            Event 事件
+                事件对象
+                    由浏览器在事件触发时创建的对象 ，对象中封装了事件的各种信息
+                    可以通过事件对象获取到事件的详细信息 ，（鼠标位置，键盘输入）
+                    浏览器在创建事件对象时，会将事件对象作为事件的回调函数的参数进行传递，可以通过为回调函数设置形参来接收（event）
+
+                    clientX : 鼠标水平方向坐标 、 clientY ： 鼠标垂直方向坐标
+        */
+        const box1 = document.getElementById("box1");
+
+        //mousemove : 鼠标移动
+        // box1.onmousemove = function(event) { 
+        //     console.log(event);
+        // }
+        box1.addEventListener("mousemove",function(event) {
+            // console.log(event.clientX , event.clientY);
+            box1.textContent  = event.clientX + ',' + event.clientY;
+        })
+    </script>
+</body>
+</html>

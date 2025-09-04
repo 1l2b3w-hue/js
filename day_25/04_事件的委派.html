@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件的委派</title>
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+    <hr>
+    <ul>
+        <li><a href="javascript:;">链接1</a></li>
+        <li><a href="javascript:;">链接2</a></li>
+        <li><a href="javascript:;">链接3</a></li>
+        <li><a href="javascript:;">链接4</a></li>
+    </ul>
+
+    <script>
+        /* 
+
+            新创建的链接无法绑定，
+
+            这里希望绑定一次事件，可以实现当前和未来的超链接都可以拥有该事件
+
+            思路 ：
+                将事件绑定到document上，这样一来，点击超链接就可以实现显示文字内容（通过冒泡到document的点击事件上）
+
+            委派 ：
+                将本该绑定到多个元素的事件，同一将这个事件绑定到document（父级上就行），
+        */
+        // 点击链接，显示链接的文字
+        const a = document.getElementsByTagName('a');
+
+        // 点击按钮新增一个超链接
+        const btn = document.getElementById("btn");
+        const ul = document.getElementsByTagName("ul")[0];
+        btn.onclick = function (event) {
+            ul.insertAdjacentHTML("beforeend", `<li><a href="javascript:;">新超链接</a></li>`);
+
+        }
+        document.onclick = function(event) {
+            // 先做判断，判断是谁触发的
+            // 判断触发对象是不是在a中,如果在，就完成点击链接显示文字功能
+            if([...a].includes(event.target)) {
+                alert(event.target.textContent);
+            }
+            
+        }
+
+        // for(let i = 0 ; i < a.length ; i++) {
+        //     console.log(a[i]);
+        //     a[i].onclick =  function(event) {
+        //         alert(event.target.textContent)
+        //     }
+        // }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>history</title>
+</head>
+<body>
+    <button id="btn">点我一下</button>
+
+    <script>
+        /* 
+            history :
+            history.length : 历史记录的页面长度
+            history.back() ：回退
+            history.forward() : 前进
+            history.go() : 根据传递的参数进行跳转页面，正数为前进，负数后退
+        */
+        const btn = document.getElementById("btn");
+        btn.addEventListener("click",function() {
+            // console.log(history);
+            console.log(history.length);
+            // history.back();
+            // history.forward();
+            history.go(1);
+        })
+    </script>
+</body>
+</html>

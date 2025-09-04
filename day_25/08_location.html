@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <form action="#">
+        <input type="text">
+    </form>
+
+    <script>
+        /* 
+            location :
+                表示浏览器地址栏的信息
+
+            location.href : 获取当前页面的地址
+            location.reload() : 刷新当前页面,当传递一个参数（布尔）：true时，表示强制清空页面缓存
+
+            可以直接修改location的值为一个新地址，会导致页面跳转到指定位置 
+            location.assign(`地址信息`)同样实现跳转
+            location.replace(`地址信息`)也可以实现跳转，但是本质将原页面地址替换为当前指定地址，因此无法进行回退
+        */
+
+        const btn =document.getElementById("btn");
+        btn.addEventListener("click",function(event) {
+            // console.log(location);
+            // location = `http://lilichao.com`;
+            // location.assign(`http://lilichao.com`); //与上面代码等价，设置新地址并跳转
+            // location.replace(`http://lilichao.com`); //将原页面地址替换为当前指定地址，无法进行回退
+            // console.log(location.href);
+            location.reload()
+        })
+    </script>
+</body>
+</html>

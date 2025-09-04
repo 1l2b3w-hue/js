@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器</title>
+</head>
+<body>
+    
+    <script>
+        /* 
+            定时器的本质：就是在指定时间后将函数添加到消息队列中
+
+            setInterval() : 每隔一段时间就会将回调函数放入消息队列
+            如果执行的函数时间长于放入时间，将会导致每次的执行时间并不平均
+            
+        */
+        //如何确保函数每次执行时间一致
+        // console.time(2);
+        // setTimeout(function fn(){
+        //     console.log(123);
+        //     console.timeEnd(2);
+        //     //通过递归来实现多次执行
+        //     setTimeout(fn,2000);
+        //     console.time(2);
+        // },2000)
+        setTimeout(() => {
+            console.log(111);
+        },0);
+        console.log(222); 
+
+
+
+
+        //     console.time();
+    //     setTimeout(function() {
+    //         console.timeEnd();
+    //         console.log(123);
+    //     },3000); 
+    //    let date = Date.now();
+    //    while(Date.now() - date < 6000) {}; //一直在栈中执行，卡着消息队列的函数进入栈
+
+
+    // console.time(2);
+    // setInterval(function() {
+    //     console.timeEnd(2); //后续将这段函数从消息队列中拿出来时，会无法匹配到计算器，报 Timer 'default' does not exist 这个错误但是可以执行
+       
+    //     // console.log(123); //每个三秒放入消息队列，到底是几秒执行要看栈和前面的消息队列是不是空的
+    //     alert(123);
+    //     console.time(2);
+    // },3000);
+    </script>
+</body>
+</html>

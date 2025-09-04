@@ -1,4 +1,4 @@
-# JS
+#  JS
 
 ## 基础
 
@@ -1839,7 +1839,7 @@ element.innerText() ： 读取或修改指定元素节点的文本内容，考�
 element.textContent() : 读取或修改指定元素节点的文本内容，不考虑css
 上面两个属性在为元素节点文本内容添加标签时，会自动转换为转义字符 ： &lt;li&gt;
 
-element.innerHTML() ： 可以直接添加标签 在使用innerHTML进行插入内容时，有被xss注入的风险
+element.innerHTML() ： 可以直接添加标签 在使用innerHTML进行插入内容时，如果是用户输入，将会有被xss注入的风险
 ```
 
 函数、方法：
