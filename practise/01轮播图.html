@@ -1,51 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>轮播图</title>
-    <script defer src="./script/change.js"></script>
+    <title>Document</title>
     <style>
-        /* * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
- 
-
-        .outer {
-            margin: 50px auto;
-            width: 1240px;
-            text-align: center;
-        } */
-
-
-
-        /* 我的轮播图样式 */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         li {
             list-style: none;
         }
+
         a {
             text-decoration: none;
             color: gray;
         }
+
         .contain {
             position: relative;
             margin: 0 auto;
             width: 1240px;
             height: 500px;
             background-color: skyblue;
-            overflow :hidden;
+            overflow: hidden;
         }
-        ul  {
-            position :absolute;
-            display:flex;
+
+        .contain>ul {
+            position: absolute;
+            
+        }
+        .contain>ul>li {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.3;
+            transition: 1s;
+        }
+        .contain>ul>.current {
+            opacity: 1;
+            z-index: 10;
         }
         .contain>a {
             position: absolute;
@@ -57,59 +54,63 @@
             text-align: center;
             border-radius: 25px;
             font-size: 20px;
+            z-index: 20;
         }
+
         .contain>.gt {
             right: 10px;
         }
+
         .contain>.lt {
             left: 10px;
         }
+        .point {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+      
+        }
+        .point>ul {
+            display: flex;
+            
+        }
+        .point>ul>li {
+            z-index: 30;
+        }
+        .point>ul>li>a {
+            display: block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            border-radius: 10px;
+            background-color: gray;
+            
+        }
     </style>
+    <script defer src="./script/01.js"></script>
 </head>
+
 <body>
-    <!-- <div class = "outer">
-        <p>总共有n张图片，现在是第m张图片</p>
-        <div class="img_wrrape">
-            <img src="./image/轮播图1.jpg" alt="">
-        </div>
-        <div class="btn_wrrape">
-            <button id="prev">上一张</button>
-            <button id="auto">自动播放</button>
-            <button id="next">下一张</button>
-
-        </div>
-    </div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- 我的轮播图结构 -->
     <div class="contain">
         <ul>
-            <li><a href="#"><img src="./image/轮播图1.jpg" alt="" title="1"></a></li>
+            <li class="current"><a href="#"><img src="./image/轮播图1.jpg" alt="" title="1"></a></li>
             <li><a href="#"><img src="./image/轮播图2.jpg" alt="" title="2"></a></li>
             <li><a href="#"><img src="./image/轮播图3.jpg" alt="" title="3"></a></li>
             <li><a href="#"><img src="./image/轮播图4.jpg" alt="" title="4"></a></li>
             <li><a href="#"><img src="./image/轮播图5.jpg" alt="" title="5"></a></li>
         </ul>
-        <a href = "#" class = "lt">&lt;</a>
-        <a  href = "#"class = "gt">&gt;</a>
-        
+        <a href="#" class="lt">&lt;</a>
+        <a href="#" class="gt">&gt;</a>
+        <div class="point">
+            <ul>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
     </div>
-
 </body>
+
 </html>
